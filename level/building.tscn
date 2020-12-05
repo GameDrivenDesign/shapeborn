@@ -1,0 +1,106 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 3, 10, 3 )
+
+[node name="building" type="Spatial"]
+
+[node name="base_building" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.437034, 0 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.91673, 0 )
+width = 2.62908
+height = 10.7049
+depth = 2.92323
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0964748, 2.3519, 1.45383 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0964748, 5.5073, 1.45383 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0964748, 8.70969, 1.45383 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox8" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.31913, 2.3519, 0.194034 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox9" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.31913, 5.5073, 0.194034 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox10" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.31913, 8.70969, 0.194034 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox11" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.126967, 2.3519, -1.46261 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox12" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.126967, 5.5073, -1.46261 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox13" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.126967, 8.70969, -1.46261 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox5" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.36425, 2.3519, 0.0124231 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox6" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.36425, 5.5073, 0.0124231 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
+
+[node name="CSGBox7" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.36425, 8.70969, 0.0124231 )
+operation = 2
+width = 0.785194
+height = 2.79855
+depth = 0.152036
