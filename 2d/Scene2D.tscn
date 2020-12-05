@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://2d/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/object.png" type="Texture" id=2]
 [ext_resource path="res://2d/Anchor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://2d/MoveableObject.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/Roboto-Medium.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://2d/Lava.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 535.011, 43.5632 )
@@ -255,7 +256,7 @@ texture = ExtResource( 2 )
 
 [node name="Wall5" type="StaticBody2D" parent="Room2"]
 position = Vector2( 1506.46, 141.88 )
-scale = Vector2( 0.35, 4.5 )
+scale = Vector2( 0.1, 4.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall5"]
 position = Vector2( 535.603, 43.0132 )
@@ -310,9 +311,73 @@ position = Vector2( 1177.84, 62.6746 )
 mass = 20.4082
 gravity_scale = 18.0
 
+[node name="Room3" type="Node2D" parent="."]
+
+[node name="Anchor3" parent="Room3" instance=ExtResource( 3 )]
+position = Vector2( 2159.53, 151.482 )
+
+[node name="Lava" parent="Room3" instance=ExtResource( 6 )]
+position = Vector2( 1841.73, 423.004 )
+scale = Vector2( 0.8, 0.3 )
+
+[node name="Wall1" type="StaticBody2D" parent="Room3"]
+position = Vector2( 1613.12, 140.791 )
+rotation = 0.785398
+scale = Vector2( 0.5, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/Wall1"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room3/Wall1"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall2" type="StaticBody2D" parent="Room3"]
+position = Vector2( 1624.43, 246.857 )
+rotation = 0.785398
+scale = Vector2( 0.35, 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/Wall2"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room3/Wall2"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall3" type="StaticBody2D" parent="Room3"]
+position = Vector2( 2352.65, 379.718 )
+scale = Vector2( 0.35, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/Wall3"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room3/Wall3"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Label5" type="Label" parent="Room3"]
+margin_left = 1664.68
+margin_top = 147.591
+margin_right = 1854.68
+margin_bottom = 191.591
+custom_fonts/font = SubResource( 2 )
+text = "Floor is lava"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 105.452, 379.654 )
 gravity_scale = 18.0
+force_strength = 50000
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
