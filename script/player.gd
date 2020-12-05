@@ -9,7 +9,7 @@ var anchors
 func _ready():
 	start_pos = position
 	anchors = get_tree().get_nodes_in_group("anchor")
-	
+
 func _process(delta):
 	var minAnchor = get_min_anchor()
 	minAnchor.highlight(true)
@@ -52,12 +52,15 @@ func get_impulse(anchor, delta):
 
 func die():
 	dead = true
-	
+
 func _integrate_forces(state):
 	if dead:
 		state.transform = Transform2D(0, start_pos)
 		state.linear_velocity = Vector2.ZERO
 		dead = false
+	
+	var velocity = state.linear_velocity.length()
+	$movement_particles.emitting = velocity > 50.0
 
 func _on_slow_time_tween_tween_step(object, key, elapsed, value):
 	get_node("/root/game").set_zoom_strength(1 - value)
