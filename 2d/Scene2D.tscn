@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://2d/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/object.png" type="Texture" id=2]
 [ext_resource path="res://2d/Anchor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://2d/MoveableObject.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Roboto-Medium.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 535.011, 43.5632 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 5 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -64,8 +69,249 @@ position = Vector2( 534.395, 43.0132 )
 scale = Vector2( 2.08748, 0.168908 )
 texture = ExtResource( 2 )
 
+[node name="StartRoom" type="Node2D" parent="."]
+
+[node name="Anchor2" parent="StartRoom" instance=ExtResource( 3 )]
+position = Vector2( 794.153, 508.307 )
+
+[node name="Anchor" parent="StartRoom" instance=ExtResource( 3 )]
+position = Vector2( 701.42, 173.345 )
+
+[node name="WallTop" type="StaticBody2D" parent="StartRoom"]
+position = Vector2( -29.9889, -398.385 )
+scale = Vector2( 0.7, 5.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallTop"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StartRoom/WallTop"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="WallRight" type="StaticBody2D" parent="StartRoom"]
+position = Vector2( 722.926, 396.88 )
+rotation = 1.5708
+scale = Vector2( 0.1, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallRight"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StartRoom/WallRight"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="WallRight2" type="StaticBody2D" parent="StartRoom"]
+position = Vector2( 919.764, 76.2252 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallRight2"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StartRoom/WallRight2"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="WallRight3" type="StaticBody2D" parent="StartRoom"]
+position = Vector2( 722.629, 173.718 )
+rotation = 1.5708
+scale = Vector2( -0.15, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallRight3"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StartRoom/WallRight3"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="WallRight4" type="StaticBody2D" parent="StartRoom"]
+position = Vector2( 532.366, -150.946 )
+rotation = -0.785398
+scale = Vector2( 0.2, 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallRight4"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StartRoom/WallRight4"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="WallRight5" type="StaticBody2D" parent="StartRoom"]
+position = Vector2( 861.169, -428.12 )
+rotation = 1.5708
+scale = Vector2( 0.3, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallRight5"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StartRoom/WallRight5"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Label2" type="Label" parent="StartRoom"]
+margin_left = 736.71
+margin_top = 418.328
+margin_right = 854.71
+margin_bottom = 491.328
+custom_fonts/font = SubResource( 2 )
+text = "Right-Click to push"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="StartRoom"]
+margin_left = 435.273
+margin_top = 160.324
+margin_right = 666.273
+margin_bottom = 189.324
+custom_fonts/font = SubResource( 2 )
+text = "Left-Click here to pull"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Room2" type="Node2D" parent="."]
+
+[node name="Wall1" type="StaticBody2D" parent="Room2"]
+position = Vector2( 710.141, -451.127 )
+scale = Vector2( 1.1, 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall1"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room2/Wall1"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall2" type="StaticBody2D" parent="Room2"]
+position = Vector2( 899.169, 141.88 )
+scale = Vector2( 0.35, 4.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall2"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room2/Wall2"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall4" type="StaticBody2D" parent="Room2"]
+position = Vector2( 1230.41, 342.598 )
+scale = Vector2( 0.299, 2.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall4"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room2/Wall4"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall6" type="StaticBody2D" parent="Room2"]
+position = Vector2( 1273.46, 141.72 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall6"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room2/Wall6"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall7" type="StaticBody2D" parent="Room2"]
+position = Vector2( 1549.72, 142.606 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall7"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room2/Wall7"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall5" type="StaticBody2D" parent="Room2"]
+position = Vector2( 1506.46, 141.88 )
+scale = Vector2( 0.35, 4.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall5"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room2/Wall5"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall3" type="StaticBody2D" parent="Room2"]
+position = Vector2( 1078.95, -147.915 )
+scale = Vector2( 0.4, 1.4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall3"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room2/Wall3"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Label3" type="Label" parent="Room2"]
+margin_left = 1115.23
+margin_top = -1.82521
+margin_right = 1233.23
+margin_bottom = 123.175
+custom_fonts/font = SubResource( 2 )
+text = "Push and pull of objects to move"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Room2"]
+margin_left = 820.013
+margin_top = -74.2245
+margin_right = 1080.01
+margin_bottom = -1.2245
+custom_fonts/font = SubResource( 2 )
+text = "Push to move objects"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveableObject" parent="Room2" instance=ExtResource( 4 )]
+position = Vector2( 1177.84, 62.6746 )
+mass = 20.4082
+gravity_scale = 18.0
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 247.914, 358.099 )
+position = Vector2( 105.452, 379.654 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -73,14 +319,3 @@ current = true
 limit_left = -50
 limit_top = -439
 limit_bottom = 550
-
-[node name="Anchor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 643.393, 86.2536 )
-
-[node name="Anchor2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 105.452, 502.185 )
-
-[node name="MoveableObject" parent="." instance=ExtResource( 4 )]
-position = Vector2( 832.807, 409.927 )
-mass = 20.4082
-gravity_scale = 18.0

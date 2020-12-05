@@ -6,7 +6,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 51.8661
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="RigidBody2D" groups=[
+"player",
+]]
 mass = 10.2041
 gravity_scale = 19.47
 continuous_cd = 1

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export var force_strength = 100000
+export var force_strength = 50000
 
 func pull_on(anchor, delta):
 	apply_impulse(Vector2.ZERO, get_impulse(anchor, delta))
