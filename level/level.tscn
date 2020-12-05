@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 200, 0.4, 200 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 100, 2, 30 )
+
+[node name="level" type="Spatial"]
+
+[node name="CSGMesh" type="CSGMesh" parent="."]
+mesh = SubResource( 1 )
+
+[node name="CSGMesh2" type="CSGMesh" parent="."]
+invert_faces = true
+mesh = SubResource( 2 )
