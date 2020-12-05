@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://2d/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/object.png" type="Texture" id=2]
@@ -14,7 +14,10 @@ extents = Vector2( 535.011, 43.5632 )
 size = 24
 font_data = ExtResource( 5 )
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 535.011, 43.5632 )
+
+[node name="scene" type="Node2D"]
 
 [node name="Room" type="Node2D" parent="."]
 
@@ -316,6 +319,9 @@ gravity_scale = 18.0
 [node name="Anchor3" parent="Room3" instance=ExtResource( 3 )]
 position = Vector2( 2159.53, 151.482 )
 
+[node name="Anchor4" parent="Room3" instance=ExtResource( 3 )]
+position = Vector2( 2613.38, -67.4317 )
+
 [node name="Lava" parent="Room3" instance=ExtResource( 6 )]
 position = Vector2( 1841.73, 423.004 )
 scale = Vector2( 0.8, 0.3 )
@@ -357,6 +363,46 @@ position = Vector2( 535.603, 43.0132 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room3/Wall3"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall4" type="StaticBody2D" parent="Room3"]
+position = Vector2( 2352.65, 379.718 )
+scale = Vector2( 0.35, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/Wall4"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room3/Wall4"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall5" type="StaticBody2D" parent="Room3"]
+position = Vector2( 2693.88, 75.799 )
+scale = Vector2( 0.35, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/Wall5"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Room3/Wall5"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="WallRight6" type="StaticBody2D" parent="Room3"]
+position = Vector2( 3110.77, 76.2252 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/WallRight6"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room3/WallRight6"]
 position = Vector2( 534.395, 43.0132 )
 scale = Vector2( 2.08748, 0.168908 )
 texture = ExtResource( 2 )

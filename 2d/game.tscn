@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://2d/Scene2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://script/game.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform sampler2D ViewportTexture;
+uniform float ZoomStrength = 0.0;
+
+const float PI = 3.14159265358979323846;
+
+float elasticOut(float t) {
+  return sin(-13.0 * (t + 1.0) * PI / 2.0) * pow(2.0, -10.0 * t) + 1.0;
+}
+float circularOut(float t) {
+  return sqrt((2.0 - t) * t);
+}
+float circularIn(float t) {
+  return 1.0 - sqrt(1.0 - t * t);
+}
+float sampleUV(float t) {
+	return 0.5 * (circularOut(t) + 0.5);
+}
+float remap(float val) {
+	return pow(val, 1.0 + ZoomStrength);
+}
+
+void fragment() {
+	vec2 centeredUV = UV / 2.0 + vec2(0.5, 0.5);
+	float distanceFromCenter = distance(vec2(0.5, 0.5), UV);
+	
+	// UVs stretched outward
+	vec2 correctedUV = vec2(
+		UV.x > 0.5
+			? remap((UV.x - 0.5) * 2.0) / 2.0 + 0.5
+			: 0.5 - 0.5 * remap((1.0 - UV.x * 2.0)),
+		UV.y > 0.5
+			? remap((UV.y - 0.5) * 2.0) / 2.0 + 0.5
+			: 0.5 - 0.5 * remap((1.0 - UV.y * 2.0))
+	);
+	// dampen effect in the center so the player can still see what's happening
+	correctedUV = mix(UV, correctedUV, distanceFromCenter);
+	
+	COLOR.xyz = texture(ViewportTexture, correctedUV).xyz;
+	//COLOR.xyz = vec3(correctedUV, 0.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/ZoomStrength = 0.0
+
+[node name="game" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+process_priority = 1
+material = SubResource( 2 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1024, 600 )
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
+
+[node name="scene" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
