@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://2d/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/object.png" type="Texture" id=2]
 [ext_resource path="res://2d/Anchor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://2d/MoveableObject.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 535.011, 43.5632 )
@@ -34,11 +35,15 @@ texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 247.914, 358.099 )
+gravity_scale = 18.0
 
 [node name="Anchor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 643.393, 86.2536 )
-player = NodePath("../Player")
 
 [node name="Anchor2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 105.452, 502.185 )
-player = NodePath("../Player")
+
+[node name="MoveableObject" parent="." instance=ExtResource( 4 )]
+position = Vector2( 832.807, 409.927 )
+mass = 20.4082
+gravity_scale = 18.0
