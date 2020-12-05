@@ -1,6 +1,6 @@
 [gd_resource type="Environment" load_steps=2 format=2]
 
-[sub_resource type="ProceduralSky" id=2]
+[sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.0627451, 0.109804, 0.137255, 1 )
 sky_horizon_color = Color( 0.137255, 0.0980392, 0.0705882, 1 )
 sky_curve = 0.0706126
@@ -12,9 +12,15 @@ sun_energy = 0.1
 
 [resource]
 background_mode = 2
-background_sky = SubResource( 2 )
+background_sky = SubResource( 1 )
 ssao_enabled = true
 ssao_intensity = 0.1
 ssao_radius2 = 0.4
 ssao_quality = 2
 ssao_edge_sharpness = 22.9
+glow_enabled = true
+glow_levels/1 = true
+glow_intensity = 0.41
+glow_strength = 1.1
+glow_bloom = 0.06
+glow_blend_mode = 1

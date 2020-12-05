@@ -34,4 +34,6 @@ mouse_right={
 
 [rendering]
 
+quality/directional_shadow/size=8192
+quality/shadow_atlas/size=8192
 environment/default_environment="res://default_env.tres"
