@@ -19,5 +19,13 @@ func on_mouse_exited():
 func _process(delta):
 	if Input.is_action_pressed("mouse_left") and highlighted:
 		$"../Player".pull_on(self, delta)
+		on_pull(delta)
 	if Input.is_action_pressed("mouse_right") and highlighted:
 		$"../Player".push_on(self, delta)
+		on_push(delta)
+
+func on_pull(delta):
+	pass
+	
+func on_push(delta):
+	pass
