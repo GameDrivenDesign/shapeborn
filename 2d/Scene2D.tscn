@@ -377,7 +377,6 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 105.452, 379.654 )
 gravity_scale = 18.0
-force_strength = 50000
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true

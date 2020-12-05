@@ -3,10 +3,27 @@ extends RigidBody2D
 export var force_strength = 50000
 var start_pos
 var dead = false
+var anchors
 
 
 func _ready():
 	start_pos = position
+	anchors = get_tree().get_nodes_in_group("anchor")
+	
+func _process(delta):
+	var minAnchor = get_min_anchor()
+	minAnchor.highlight(true)
+	
+func get_min_anchor():
+	var minAnchor = anchors[0]
+	var minDistance = anchors[0].get_local_mouse_position().length()
+	for anchor in anchors:
+		var distance = anchor.get_local_mouse_position().length()
+		if distance < minDistance:
+			minDistance = distance
+			minAnchor = anchor
+	print(minDistance)
+	return minAnchor
 
 func pull_on(anchor, delta):
 	apply_impulse(Vector2.ZERO, get_impulse(anchor, delta))
