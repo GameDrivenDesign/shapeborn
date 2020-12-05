@@ -1,31 +1,37 @@
 extends Node2D
 
 var highlighted = false
+var selected = false
 
 func _ready():
 	pass
 
 func on_mouse_entered():
-	print("enter")
-	$SelectedSprite.visible = true
-	$Sprite.visible = false
+	show_highlight(true)
 	highlighted = true
 
 func on_mouse_exited():
-	$SelectedSprite.visible = false
-	$Sprite.visible = true
+	if not selected:
+		show_highlight(false)
 	highlighted = false
 
 func _process(delta):
-	if Input.is_action_pressed("mouse_left") and highlighted:
-		$"../Player".pull_on(self, delta)
-		on_pull(delta)
-	if Input.is_action_pressed("mouse_right") and highlighted:
-		$"../Player".push_on(self, delta)
-		on_push(delta)
-
-func on_pull(delta):
-	pass
+	if (Input.is_action_just_pressed("mouse_left") 
+		or Input.is_action_just_pressed("mouse_right")) and highlighted:
+		selected = true
 	
-func on_push(delta):
-	pass
+	if (Input.is_action_just_released("mouse_left") 
+		or Input.is_action_just_released("mouse_right")) and selected:
+		selected = false
+		if not highlighted:
+			show_highlight(false)
+	
+	if selected and Input.is_action_pressed("mouse_left"):
+		$"../Player".pull_on(self, delta)
+	
+	if selected and Input.is_action_pressed("mouse_right"):
+		$"../Player".push_on(self, delta)
+
+func show_highlight(show):
+	$SelectedSprite.visible = show
+	$Sprite.visible = !show

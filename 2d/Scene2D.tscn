@@ -10,25 +10,56 @@ extents = Vector2( 535.011, 43.5632 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Room" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="WallTop" type="StaticBody2D" parent="Room"]
+position = Vector2( 0.00012207, -479.488 )
+scale = Vector2( 10, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/WallTop"]
 position = Vector2( 535.603, 43.0132 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+[node name="Sprite" type="Sprite" parent="Room/WallTop"]
 position = Vector2( 534.395, 43.0132 )
 scale = Vector2( 2.08748, 0.168908 )
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 0, 502.185 )
+[node name="WallLeft" type="StaticBody2D" parent="Room"]
+position = Vector2( 0, -479.715 )
+rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/WallLeft"]
 position = Vector2( 535.603, 43.0132 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
+[node name="Sprite" type="Sprite" parent="Room/WallLeft"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="WallRight" type="StaticBody2D" parent="Room"]
+position = Vector2( 10687.9, 588.439 )
+rotation = 4.71239
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/WallRight"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room/WallRight"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="WallBottom" type="StaticBody2D" parent="Room"]
+position = Vector2( 0, 502.185 )
+scale = Vector2( 10, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/WallBottom"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Room/WallBottom"]
 position = Vector2( 534.395, 43.0132 )
 scale = Vector2( 2.08748, 0.168908 )
 texture = ExtResource( 2 )
@@ -36,6 +67,12 @@ texture = ExtResource( 2 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 247.914, 358.099 )
 gravity_scale = 18.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = -50
+limit_top = -439
+limit_bottom = 550
 
 [node name="Anchor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 643.393, 86.2536 )
