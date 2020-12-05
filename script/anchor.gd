@@ -9,16 +9,6 @@ func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 	others = get_tree().get_nodes_in_group("anchor")
 	others.remove(others.find(self))
-	
-
-func on_mouse_entered():
-	show_highlight(true)
-	highlighted = true
-
-func on_mouse_exited():
-	if not selected:
-		show_highlight(false)
-	highlighted = false
 
 func highlight(highlighted):
 	if highlighted:

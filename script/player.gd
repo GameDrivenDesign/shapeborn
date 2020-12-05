@@ -2,6 +2,7 @@ extends RigidBody2D
 
 export var force_strength = 50000
 export var max_velocity = 1000
+export var max_distance = 400
 
 var start_pos
 var dead = false
@@ -14,7 +15,11 @@ func _ready():
 
 func _process(delta):
 	var minAnchor = get_min_anchor()
-	minAnchor.highlight(true)
+	if minAnchor != null:
+		minAnchor.highlight(true)
+	else:
+		for anchor in anchors:
+			anchor.highlight(false)
 	
 	if Input.is_action_just_pressed("slow_time"):
 		slow_time()
@@ -37,6 +42,8 @@ func get_min_anchor():
 		if distance < minDistance:
 			minDistance = distance
 			minAnchor = anchor
+	if minDistance > max_distance:
+		return null
 	return minAnchor
 
 func pull_on(anchor, delta):

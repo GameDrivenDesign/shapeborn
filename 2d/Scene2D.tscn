@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://2d/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/object.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://2d/MoveableObject.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/Roboto-Medium.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://2d/Lava.tscn" type="PackedScene" id=6]
+[ext_resource path="res://script/Elevator.gd" type="Script" id=7]
+[ext_resource path="res://2d/Bar.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 535.011, 43.5632 )
@@ -23,7 +25,6 @@ extents = Vector2( 535.011, 43.5632 )
 
 [node name="WallTop" type="StaticBody2D" parent="Room"]
 position = Vector2( 0.00012207, -479.488 )
-scale = Vector2( 10, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/WallTop"]
 position = Vector2( 535.603, 43.0132 )
@@ -319,9 +320,6 @@ gravity_scale = 18.0
 [node name="Anchor3" parent="Room3" instance=ExtResource( 3 )]
 position = Vector2( 2159.53, 151.482 )
 
-[node name="Anchor4" parent="Room3" instance=ExtResource( 3 )]
-position = Vector2( 2613.38, -67.4317 )
-
 [node name="Lava" parent="Room3" instance=ExtResource( 6 )]
 position = Vector2( 1841.73, 423.004 )
 scale = Vector2( 0.8, 0.3 )
@@ -380,33 +378,6 @@ position = Vector2( 534.395, 43.0132 )
 scale = Vector2( 2.08748, 0.168908 )
 texture = ExtResource( 2 )
 
-[node name="Wall5" type="StaticBody2D" parent="Room3"]
-position = Vector2( 2693.88, 75.799 )
-scale = Vector2( 0.35, 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/Wall5"]
-position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="Room3/Wall5"]
-position = Vector2( 534.395, 43.0132 )
-scale = Vector2( 2.08748, 0.168908 )
-texture = ExtResource( 2 )
-
-[node name="WallRight6" type="StaticBody2D" parent="Room3"]
-position = Vector2( 3110.77, 76.2252 )
-rotation = 1.5708
-scale = Vector2( 0.4, 0.5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/WallRight6"]
-position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Room3/WallRight6"]
-position = Vector2( 534.395, 43.0132 )
-scale = Vector2( 2.08748, 0.168908 )
-texture = ExtResource( 2 )
-
 [node name="Label5" type="Label" parent="Room3"]
 margin_left = 1664.68
 margin_top = 147.591
@@ -420,12 +391,133 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Tower" type="Node2D" parent="."]
+
+[node name="Bar" parent="Tower" instance=ExtResource( 8 )]
+position = Vector2( 3068.2, -2208.26 )
+rotation = 1.5708
+scale = Vector2( 1, 2.55 )
+
+[node name="WallRight6" type="StaticBody2D" parent="Tower"]
+position = Vector2( 1083.74, -5625.7 )
+rotation = 1.5708
+scale = Vector2( 5, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/WallRight6"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Tower/WallRight6"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall5" type="StaticBody2D" parent="Tower"]
+position = Vector2( 2715.78, -2077.18 )
+scale = Vector2( 0.35, 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Wall5"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Wall5"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall6" type="StaticBody2D" parent="Tower"]
+position = Vector2( 2715.77, -2093.47 )
+scale = Vector2( 0.35, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Wall6"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Wall6"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall7" type="StaticBody2D" parent="Tower"]
+position = Vector2( 2527.67, -2317.27 )
+scale = Vector2( 0.35, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Wall7"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Wall7"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Wall8" type="StaticBody2D" parent="Tower"]
+position = Vector2( 2540.11, -2317.27 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Wall8"]
+position = Vector2( 535.603, 43.0132 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Wall8"]
+position = Vector2( 534.395, 43.0132 )
+scale = Vector2( 2.08748, 0.168908 )
+texture = ExtResource( 2 )
+
+[node name="Anchor4" parent="Tower" instance=ExtResource( 3 )]
+position = Vector2( 2716.27, 223.74 )
+script = ExtResource( 7 )
+end = NodePath("../ElevatorEnd")
+
+[node name="Label8" type="Label" parent="Tower/Anchor4"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -32.2346
+margin_top = -14.5551
+margin_right = 157.765
+margin_bottom = 29.4449
+custom_fonts/font = SubResource( 2 )
+text = "Elevator"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Tower"]
+margin_left = 1031.23
+margin_top = -660.225
+margin_right = 1221.23
+margin_bottom = -616.225
+custom_fonts/font = SubResource( 2 )
+text = "Oh no"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="Tower"]
+margin_left = 2525.11
+margin_top = 316.674
+margin_right = 2715.11
+margin_bottom = 377.674
+custom_fonts/font = SubResource( 2 )
+text = "Please wait for the elevator"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ElevatorEnd" type="Node2D" parent="Tower"]
+position = Vector2( 2715.11, -2274.14 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 232.755, 427.561 )
+position = Vector2( 112.301, 396.344 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 limit_left = -50
-limit_top = -439
 limit_bottom = 550
