@@ -2,9 +2,14 @@ extends Node2D
 
 var highlighted = false
 var selected = false
+var player
+var others
 
 func _ready():
-	pass
+	player = get_tree().get_nodes_in_group("player")[0]
+	others = get_tree().get_nodes_in_group("anchor")
+	others.remove(others.find(self))
+	
 
 func on_mouse_entered():
 	show_highlight(true)
@@ -14,6 +19,15 @@ func on_mouse_exited():
 	if not selected:
 		show_highlight(false)
 	highlighted = false
+
+func highlight(highlighted):
+	if highlighted:
+		for o in others:
+			o.highlight(false)
+	
+	self.highlighted = highlighted
+	#if highlighted or not selected:
+	show_highlight(highlighted)
 
 func _process(delta):
 	if (Input.is_action_just_pressed("mouse_left") 
@@ -27,10 +41,10 @@ func _process(delta):
 			show_highlight(false)
 	
 	if selected and Input.is_action_pressed("mouse_left"):
-		$"../Player".pull_on(self, delta)
+		player.pull_on(self, delta)
 	
 	if selected and Input.is_action_pressed("mouse_right"):
-		$"../Player".push_on(self, delta)
+		player.push_on(self, delta)
 
 func show_highlight(show):
 	$SelectedSprite.visible = show
