@@ -1,6 +1,8 @@
 extends RigidBody2D
 
 export var force_strength = 50000
+export var max_velocity = 1000
+
 var start_pos
 var dead = false
 var anchors
@@ -54,6 +56,9 @@ func die():
 	dead = true
 	
 func _integrate_forces(state):
+	if state.linear_velocity.length() > max_velocity:
+		state.linear_velocity = state.linear_velocity.normalized() * max_velocity
+		
 	if dead:
 		state.transform = Transform2D(0, start_pos)
 		state.linear_velocity = Vector2.ZERO

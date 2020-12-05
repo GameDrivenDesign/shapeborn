@@ -76,7 +76,7 @@ texture = ExtResource( 2 )
 [node name="StartRoom" type="Node2D" parent="."]
 
 [node name="Anchor2" parent="StartRoom" instance=ExtResource( 3 )]
-position = Vector2( 794.153, 508.307 )
+position = Vector2( 787.612, 508.307 )
 
 [node name="Anchor" parent="StartRoom" instance=ExtResource( 3 )]
 position = Vector2( 701.42, 173.345 )
@@ -421,7 +421,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 105.452, 379.654 )
+position = Vector2( 232.755, 427.561 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
