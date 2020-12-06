@@ -768,6 +768,20 @@ gravity_scale = 18.0
 position = Vector2( 7136, -5960 )
 scale = Vector2( 2.24, 7.24 )
 
+[node name="Label9" type="Label" parent="Canyon"]
+margin_left = 8940.9
+margin_top = -6830.8
+margin_right = 9707.9
+margin_bottom = -6615.8
+rect_rotation = -33.0
+custom_fonts/font = SubResource( 2 )
+text = "Level 3
+The Lair"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Wall32" parent="Canyon" instance=ExtResource( 9 )]
 modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 7146.36, -6829.38 )
@@ -1132,6 +1146,58 @@ scale = Vector2( 0.714234, 2.89891 )
 dark = true
 
 [node name="End" type="Node2D" parent="."]
+
+[node name="Label10" type="Label" parent="End"]
+margin_left = 14373.2
+margin_top = -11758.4
+margin_right = 15140.2
+margin_bottom = -11543.4
+custom_fonts/font = SubResource( 2 )
+text = "Level 4
+The End"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="End"]
+margin_left = 12056.6
+margin_top = -11552.4
+margin_right = 12345.6
+margin_bottom = -11479.4
+custom_fonts/font = ExtResource( 10 )
+text = "You've come so far..."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="End"]
+margin_left = 12766.0
+margin_top = -11552.0
+margin_right = 13176.0
+margin_bottom = -11479.0
+custom_fonts/font = ExtResource( 10 )
+text = "and mastered your skills"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="End"]
+margin_left = 13569.9
+margin_top = -11552.0
+margin_right = 13979.9
+margin_bottom = -11479.0
+custom_fonts/font = ExtResource( 10 )
+text = "but will it be enough?"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Wall39" parent="End" instance=ExtResource( 9 )]
 modulate = Color( 0.11, 0.11, 0.11, 1 )
