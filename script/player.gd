@@ -8,6 +8,7 @@ var start_pos
 var dead = false
 var anchors
 
+var last_checkpoint
 
 func _ready():
 	start_pos = position
@@ -65,9 +66,9 @@ func die():
 func _integrate_forces(state):
 	if state.linear_velocity.length() > max_velocity:
 		state.linear_velocity = state.linear_velocity.normalized() * max_velocity
-		
+	
 	if dead:
-		state.transform = Transform2D(0, start_pos)
+		state.transform = Transform2D(0, last_checkpoint.get_spawn_position() if last_checkpoint else start_pos)
 		state.linear_velocity = Vector2.ZERO
 		dead = false
 	
