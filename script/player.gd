@@ -23,6 +23,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("respawn_at_checkpoint"):
 		dead = true
+		get_node("/root/game").emit_signal("reset")
 	
 	if Input.is_action_just_pressed("slow_time") and not time_is_slow :
 		slow_time()
