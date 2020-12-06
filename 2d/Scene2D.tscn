@@ -836,7 +836,7 @@ position = Vector2( 8864, -6448 )
 position = Vector2( 9408, -7120 )
 
 [node name="Anchor13" parent="Projectiles" instance=ExtResource( 3 )]
-position = Vector2( 11336, -7392 )
+position = Vector2( 11328, -6888 )
 
 [node name="Anchor14" parent="Projectiles" instance=ExtResource( 3 )]
 position = Vector2( 12168, -7392 )
@@ -902,11 +902,11 @@ rotation = -3.14159
 [node name="ClimbProjectiles" type="Node2D" parent="."]
 
 [node name="projectile_emitter5" parent="ClimbProjectiles" instance=ExtResource( 13 )]
-position = Vector2( 13432, -7736 )
+position = Vector2( 13429.2, -7657.31 )
 rotation = 1.57079
 
 [node name="projectile_emitter6" parent="ClimbProjectiles" instance=ExtResource( 13 )]
-position = Vector2( 13752, -8216 )
+position = Vector2( 13756.5, -8127.6 )
 rotation = 4.71238
 
 [node name="Anchor22" parent="ClimbProjectiles" instance=ExtResource( 3 )]
@@ -916,10 +916,10 @@ position = Vector2( 13760, -7264 )
 position = Vector2( 13432, -7488 )
 
 [node name="Anchor24" parent="ClimbProjectiles" instance=ExtResource( 3 )]
-position = Vector2( 13752, -7936 )
+position = Vector2( 13756.5, -7853.59 )
 
 [node name="Anchor25" parent="ClimbProjectiles" instance=ExtResource( 3 )]
-position = Vector2( 13424, -8416 )
+position = Vector2( 13431.5, -8333.59 )
 
 [node name="Anchor26" parent="ClimbProjectiles" instance=ExtResource( 3 )]
 position = Vector2( 13760, -8648 )
@@ -1055,7 +1055,7 @@ scale = Vector2( 0.714234, 2.89891 )
 position = Vector2( 176, 280 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 248, 272 )
+position = Vector2( 4682.4, -4790.76 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -1067,7 +1067,7 @@ limit_bottom = 550
 position = Vector2( 2720, -2104 )
 
 [node name="checkpoint5" parent="." instance=ExtResource( 12 )]
-position = Vector2( 6251.75, -7071.15 )
+position = Vector2( 5734.24, -7063.75 )
 
 [node name="checkpoint6" parent="." instance=ExtResource( 12 )]
 position = Vector2( 4939.5, -7040.27 )
