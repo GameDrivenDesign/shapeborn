@@ -61,7 +61,7 @@ func push_on(anchor, delta):
 		anchor.apply_impulse(Vector2.ZERO, get_impulse(anchor, delta))
 
 func get_impulse(anchor, delta):
-	return (anchor.position - position).normalized() * force_strength * delta
+	return (anchor.global_position - global_position).normalized() * force_strength * delta
 
 func die():
 	dead = true
