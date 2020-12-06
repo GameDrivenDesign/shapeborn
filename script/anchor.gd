@@ -14,9 +14,10 @@ func highlight(highlighted):
 	if highlighted:
 		for o in others:
 			o.highlight(false)
+	else:
+		selected = false
 	
 	self.highlighted = highlighted
-	#if highlighted or not selected:
 	show_highlight(highlighted)
 
 func _process(delta):
