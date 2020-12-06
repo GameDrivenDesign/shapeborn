@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://2d/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/object.png" type="Texture" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://2d/projectile_emitter.tscn" type="PackedScene" id=13]
 [ext_resource path="res://2d/box_killzone.tscn" type="PackedScene" id=14]
 [ext_resource path="res://2d/box_emitter.tscn" type="PackedScene" id=15]
+[ext_resource path="res://2d/BossTrigger.gd" type="Script" id=16]
+[ext_resource path="res://assets/player.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 535.011, 43.5632 )
@@ -34,6 +36,12 @@ extents = Vector2( 538.375, 43.5917 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 534.938, 43.9859 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 622.266, 128.901 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 65.399
 
 [node name="scene" type="Node2D"]
 
@@ -709,7 +717,7 @@ scale = Vector2( 0.01, 6 )
 [node name="Wall22" parent="Riddle" instance=ExtResource( 9 )]
 position = Vector2( 4185.66, -6928.12 )
 rotation = 0.0
-scale = Vector2( 1.04, 4 )
+scale = Vector2( 2, 4 )
 
 [node name="Wall23" parent="Riddle" instance=ExtResource( 9 )]
 position = Vector2( 4454.43, -7434.72 )
@@ -747,54 +755,35 @@ gravity_scale = 18.0
 position = Vector2( 7136, -5960 )
 scale = Vector2( 2.24, 7.24 )
 
-[node name="Wall39" parent="Canyon" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
-position = Vector2( 6078.68, -7066.6 )
-rotation = 0.0
-scale = Vector2( 1, 4 )
-dark = true
-
 [node name="Wall32" parent="Canyon" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 7146.36, -6829.38 )
 rotation = 1.5708
 scale = Vector2( 1, 5 )
-dark = true
 
 [node name="Wall33" parent="Canyon" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 9385.93, -6608.56 )
 rotation = 1.5708
 scale = Vector2( 1, 5 )
-dark = true
 
 [node name="Wall38" parent="Canyon" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 9040, -6448 )
 rotation = 1.5708
 scale = Vector2( 0.04, 2.08 )
-dark = true
 
 [node name="Wall34" parent="Canyon" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 6713.96, -5822.67 )
 rotation = 0.0
 scale = Vector2( 2.5, 5 )
-dark = true
 
 [node name="Wall35" parent="Canyon" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
-position = Vector2( 6272, -8736 )
+position = Vector2( 6206.72, -8732.23 )
 rotation = 0.0
 scale = Vector2( 3, 5 )
-dark = true
 
 [node name="Wall36" parent="Canyon" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 7010.62, -7022.06 )
 rotation = -0.760963
 scale = Vector2( 0.1, 1 )
-dark = true
 
 [node name="Rope" parent="Canyon" instance=ExtResource( 11 )]
 position = Vector2( 8291.88, -8230.53 )
@@ -802,61 +791,36 @@ rotation = 0.872665
 pieces = 23
 
 [node name="Wall37" parent="Canyon" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 7942.71, -8322.38 )
 rotation = 0.0
 scale = Vector2( 0.1, 1 )
-dark = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 
-[node name="Label9" type="Label" parent="Projectiles"]
-margin_left = 9512.0
-margin_top = -7296.0
-margin_right = 9702.0
-margin_bottom = -7235.0
-custom_fonts/font = ExtResource( 10 )
-text = "Press space to slow time for 3s"
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Wall41" parent="Projectiles" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 9408, -8736 )
 rotation = 0.0
 scale = Vector2( 3.76, 15.52 )
-dark = true
 
 [node name="Wall38" parent="Projectiles" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 9384, -6888 )
 rotation = 0.0
 scale = Vector2( 4.39999, 5 )
-dark = true
 
 [node name="Wall42" parent="Projectiles" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 9992, -7112 )
 rotation = 0.0
 scale = Vector2( 0.29722, 2.82602 )
-dark = true
 
 [node name="Wall46" parent="Projectiles" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 9408, -7120 )
 rotation = 0.0
 scale = Vector2( 0.29722, 2.82602 )
-dark = true
 
 [node name="Wall43" parent="Projectiles" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 10664, -7400 )
 rotation = 0.0
 scale = Vector2( 0.29722, 2.82602 )
-dark = true
 
 [node name="Anchor12" parent="Projectiles" instance=ExtResource( 3 )]
 position = Vector2( 10160, -7392 )
@@ -889,25 +853,19 @@ position = Vector2( 12168, -7392 )
 position = Vector2( 13152, -7392 )
 
 [node name="Wall44" parent="Projectiles" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 11680, -7128 )
 rotation = 0.0
 scale = Vector2( 0.29722, 2.82602 )
-dark = true
 
 [node name="Wall45" parent="Projectiles" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 12488, -7400 )
 rotation = 0.0
 scale = Vector2( 0.29722, 2.82602 )
-dark = true
 
 [node name="Wall47" parent="Projectiles" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 13368, -7400 )
 rotation = 0.0
 scale = Vector2( 0.0572201, 2.82602 )
-dark = true
 
 [node name="projectile_emitter" parent="Projectiles" instance=ExtResource( 13 )]
 position = Vector2( 9864, -7384 )
@@ -978,49 +936,37 @@ position = Vector2( 13760, -8648 )
 position = Vector2( 13424, -8736 )
 
 [node name="Wall39" parent="ClimbProjectiles" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 13760, -6792 )
 rotation = -1.57079
 scale = Vector2( 2.36001, 5 )
-dark = true
 
 [node name="Wall40" parent="ClimbProjectiles" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 13760, -9264 )
 rotation = -3.14159
 scale = Vector2( 0.720012, 6.36 )
-dark = true
 
 [node name="BoxWall" type="Node2D" parent="."]
 position = Vector2( 11512, -8552 )
 
 [node name="Wall41" parent="BoxWall" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 1488, -944.001 )
 rotation = -3.14159
 scale = Vector2( 0.80002, 3.68 )
-dark = true
 
 [node name="Wall49" parent="BoxWall" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 631.999, -944 )
 rotation = -2.09439
 scale = Vector2( 1.83819, 3.68 )
-dark = true
 
 [node name="Wall43" parent="BoxWall" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( -1616, -1952 )
 rotation = 0.0
 scale = Vector2( 0.80002, 20.48 )
-dark = true
 
 [node name="Wall42" parent="BoxWall" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( 0, 0 )
 rotation = -2.09439
 scale = Vector2( 1.9446, 3.68 )
-dark = true
 
 [node name="Anchor28" parent="BoxWall" instance=ExtResource( 3 )]
 position = Vector2( 95.999, -464 )
@@ -1078,25 +1024,19 @@ position = Vector2( 1536, -568 )
 gravity_scale = 18.0
 
 [node name="Wall44" parent="BoxWall" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( -3224, -4488 )
 rotation = 0.0
 scale = Vector2( 0.80002, 49.88 )
-dark = true
 
 [node name="Wall47" parent="BoxWall" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( -1616, -4424 )
 rotation = 0.0
 scale = Vector2( 0.80002, 6.63996 )
-dark = true
 
 [node name="Wall48" parent="BoxWall" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( -2384, -4456 )
 rotation = 0.0
 scale = Vector2( 0.724245, 0.399792 )
-dark = true
 
 [node name="box_emitter" parent="BoxWall" instance=ExtResource( 15 )]
 position = Vector2( -1792, -4136 )
@@ -1105,31 +1045,137 @@ position = Vector2( -1792, -4136 )
 position = Vector2( -1184, -1960 )
 
 [node name="Wall45" parent="BoxWall" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( -1616.28, -3640 )
 rotation = 0.0
 scale = Vector2( 0.80002, 12.64 )
-dark = true
 
 [node name="Wall46" parent="BoxWall" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( -1616, -2552 )
 rotation = 0.0
 scale = Vector2( 0.554234, 4.61149 )
-dark = true
 
 [node name="Wall50" parent="BoxWall" instance=ExtResource( 9 )]
-modulate = Color( 0.15, 0.15, 0.15, 1 )
 position = Vector2( -824.001, -2800 )
 rotation = 0.0
 scale = Vector2( 0.714234, 2.89891 )
-dark = true
+
+[node name="End" type="Node2D" parent="."]
+
+[node name="Wall39" parent="End" instance=ExtResource( 9 )]
+position = Vector2( 10659.2, -11516.8 )
+rotation = 0.0
+scale = Vector2( 6, 4 )
+
+[node name="Anchor12" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 14806, -12029.5 )
+
+[node name="Anchor20" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 10751.3, -12192.6 )
+
+[node name="Anchor21" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 11095.3, -11511.4 )
+
+[node name="Anchor22" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 11839.2, -11511.4 )
+
+[node name="Anchor23" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 12577.4, -11511.4 )
+
+[node name="Anchor24" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 13312.8, -11511.4 )
+
+[node name="Anchor25" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 14182, -11511.4 )
+
+[node name="Anchor13" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 15175.4, -11514.1 )
+
+[node name="Anchor14" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 16143.1, -11515.4 )
+
+[node name="Anchor15" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 16457.6, -12163.7 )
+
+[node name="Anchor16" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 16120.3, -12493.4 )
+
+[node name="Anchor17" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 15178.4, -12236.8 )
+
+[node name="Anchor19" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 14810.7, -12484.6 )
+
+[node name="Anchor18" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 15517.3, -12491.8 )
+
+[node name="Wall40" parent="End" instance=ExtResource( 9 )]
+position = Vector2( 10530.7, -12986.7 )
+rotation = 0.0
+scale = Vector2( 4, 4 )
+
+[node name="Wall41" parent="End" instance=ExtResource( 9 )]
+position = Vector2( 14274.4, -12644.2 )
+rotation = 0.0
+scale = Vector2( 0.5, 10 )
+
+[node name="Wall42" parent="End" instance=ExtResource( 9 )]
+position = Vector2( 16452.6, -12576.4 )
+rotation = 0.0
+scale = Vector2( 0.5, 13 )
+
+[node name="Wall44" parent="End" instance=ExtResource( 9 )]
+position = Vector2( 16324.7, -11843.6 )
+rotation = 0.0
+scale = Vector2( 0.5, 6 )
+
+[node name="Wall45" parent="End" instance=ExtResource( 9 )]
+position = Vector2( 15734.7, -12265.4 )
+rotation = 0.0
+scale = Vector2( 0.2, 0.4 )
+
+[node name="Wall46" parent="End" instance=ExtResource( 9 )]
+position = Vector2( 15077.9, -12265.4 )
+rotation = 0.0
+scale = Vector2( 0.2, 0.4 )
+
+[node name="Door" parent="End" instance=ExtResource( 9 )]
+position = Vector2( 14723.2, -11852.2 )
+rotation = 0.0
+scale = Vector2( 0.08, 5 )
+
+[node name="Wall43" parent="End" instance=ExtResource( 9 )]
+position = Vector2( 14617.6, -12834.9 )
+rotation = 0.0
+scale = Vector2( 3, 4 )
+
+[node name="Bar4" parent="End" instance=ExtResource( 8 )]
+position = Vector2( 16388.6, -11836.8 )
+
+[node name="BossTrigger" type="Area2D" parent="End"]
+position = Vector2( 15177.5, -11668.4 )
+script = ExtResource( 16 )
+door = NodePath("../Door")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="End/BossTrigger"]
+position = Vector2( -150.016, -305.553 )
+scale = Vector2( 0.08, 5 )
+shape = SubResource( 7 )
+
+[node name="Boss" type="StaticBody2D" parent="End"]
+position = Vector2( 15624.8, -11855.6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End/Boss"]
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="End/Boss"]
+scale = Vector2( 0.254362, 0.254362 )
+texture = ExtResource( 17 )
 
 [node name="startPoint" type="Node2D" parent="."]
 position = Vector2( 176, 280 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10184, -10576 )
+position = Vector2( 106.808, 426.006 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -1154,3 +1200,4 @@ position = Vector2( 1569.49, 129.453 )
 
 [node name="checkpoint" parent="." instance=ExtResource( 12 )]
 position = Vector2( 9920, -12200 )
+[connection signal="body_entered" from="End/BossTrigger" to="End/BossTrigger" method="on_enter"]
