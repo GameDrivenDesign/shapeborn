@@ -1087,7 +1087,7 @@ position = Vector2( 1536, -416 )
 gravity_scale = 18.0
 
 [node name="box_killzone" parent="BoxWall" instance=ExtResource( 14 )]
-position = Vector2( -2000, -336 )
+position = Vector2( -1979.82, -325.908 )
 
 [node name="Lava" parent="BoxWall" instance=ExtResource( 6 )]
 position = Vector2( -2432, -744 )
@@ -1099,7 +1099,7 @@ gravity_scale = 18.0
 
 [node name="Wall44" parent="BoxWall" instance=ExtResource( 9 )]
 modulate = Color( 0.11, 0.11, 0.11, 1 )
-position = Vector2( -2907.82, -4474.54 )
+position = Vector2( -3069.56, -4474.54 )
 rotation = 0.0
 scale = Vector2( 0.80002, 49.88 )
 dark = true
@@ -1119,7 +1119,7 @@ scale = Vector2( 0.724245, 0.399792 )
 dark = true
 
 [node name="box_emitter" parent="BoxWall" instance=ExtResource( 15 )]
-position = Vector2( -1759.54, -4154.35 )
+position = Vector2( -1882.38, -4147.62 )
 
 [node name="checkpoint" parent="BoxWall" instance=ExtResource( 12 )]
 position = Vector2( -1184, -1960 )
