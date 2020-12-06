@@ -1099,7 +1099,7 @@ gravity_scale = 18.0
 
 [node name="Wall44" parent="BoxWall" instance=ExtResource( 9 )]
 modulate = Color( 0.11, 0.11, 0.11, 1 )
-position = Vector2( -3224, -4488 )
+position = Vector2( -2907.82, -4474.54 )
 rotation = 0.0
 scale = Vector2( 0.80002, 49.88 )
 dark = true
@@ -1119,7 +1119,7 @@ scale = Vector2( 0.724245, 0.399792 )
 dark = true
 
 [node name="box_emitter" parent="BoxWall" instance=ExtResource( 15 )]
-position = Vector2( -1771, -4171 )
+position = Vector2( -1759.54, -4154.35 )
 
 [node name="checkpoint" parent="BoxWall" instance=ExtResource( 12 )]
 position = Vector2( -1184, -1960 )
@@ -1331,7 +1331,7 @@ texture = ExtResource( 17 )
 position = Vector2( 176, 280 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 106.808, 426.006 )
+position = Vector2( 10160, -10629 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

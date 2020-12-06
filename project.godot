@@ -19,6 +19,10 @@ config/name="Shapeborn"
 run/main_scene="res://2d/game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://script/global.gd"
+
 [display]
 
 window/size/resizable=false
