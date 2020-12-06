@@ -9,6 +9,7 @@ var dead = false
 var anchors
 
 var last_checkpoint
+var time_is_slow = false
 
 func _ready():
 	start_pos = position
@@ -22,11 +23,15 @@ func _process(delta):
 		for anchor in anchors:
 			anchor.highlight(false)
 	
-	if Input.is_action_just_pressed("slow_time"):
+	if Input.is_action_just_pressed("respawn_at_checkpoint"):
+		dead = true
+	
+	if Input.is_action_just_pressed("slow_time") and not time_is_slow :
 		slow_time()
 
 const SLOW_FACTOR = 0.3
 func slow_time():
+	time_is_slow = true
 	$slow_time_tween.interpolate_property(Engine, "time_scale", 1, SLOW_FACTOR, 0.5, Tween.TRANS_EXPO)
 	$slow_time_tween.start()
 	yield($slow_time_tween, "tween_completed")
@@ -34,12 +39,16 @@ func slow_time():
 	$slow_time_tween.interpolate_property(Engine, "time_scale", SLOW_FACTOR, 1, 2, Tween.TRANS_EXPO)
 	$slow_time_tween.start()
 	yield($slow_time_tween, "tween_completed")
+	time_is_slow = false
+
+func mouse_dist(obj):
+	 return obj.get_local_mouse_position().length()
 
 func get_min_anchor():
 	var minAnchor = anchors[0]
-	var minDistance = anchors[0].get_local_mouse_position().length()
+	var minDistance = mouse_dist(anchors[0])
 	for anchor in anchors:
-		var distance = anchor.get_local_mouse_position().length()
+		var distance = mouse_dist(anchor)
 		if distance < minDistance:
 			minDistance = distance
 			minAnchor = anchor

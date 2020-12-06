@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://2d/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/object.png" type="Texture" id=2]
@@ -9,19 +9,21 @@
 [ext_resource path="res://script/Elevator.gd" type="Script" id=7]
 [ext_resource path="res://2d/Bar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://2d/Wall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://2d/MoveableAnchor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://2d/Rope.tscn" type="PackedScene" id=11]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 535.011, 43.5632 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 24
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 90
 font_data = ExtResource( 5 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 535.011, 43.5632 )
 
 [node name="scene" type="Node2D"]
@@ -33,7 +35,7 @@ position = Vector2( 0.00012207, -479.488 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/WallTop"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room/WallTop"]
 position = Vector2( 534.395, 43.0132 )
@@ -46,7 +48,7 @@ rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/WallLeft"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room/WallLeft"]
 position = Vector2( 534.395, 43.0132 )
@@ -59,7 +61,7 @@ rotation = 4.71239
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/WallRight"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room/WallRight"]
 position = Vector2( 534.395, 43.0132 )
@@ -72,7 +74,7 @@ scale = Vector2( 10, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/WallBottom"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room/WallBottom"]
 position = Vector2( 534.395, 43.0132 )
@@ -93,7 +95,7 @@ scale = Vector2( 0.7, 5.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallTop"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StartRoom/WallTop"]
 position = Vector2( 534.395, 43.0132 )
@@ -107,7 +109,7 @@ scale = Vector2( 0.1, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallRight"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StartRoom/WallRight"]
 position = Vector2( 534.395, 43.0132 )
@@ -121,7 +123,7 @@ scale = Vector2( 0.4, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallRight2"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StartRoom/WallRight2"]
 position = Vector2( 534.395, 43.0132 )
@@ -135,7 +137,7 @@ scale = Vector2( -0.15, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallRight3"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StartRoom/WallRight3"]
 position = Vector2( 534.395, 43.0132 )
@@ -149,7 +151,7 @@ scale = Vector2( 0.2, 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallRight4"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StartRoom/WallRight4"]
 position = Vector2( 534.395, 43.0132 )
@@ -163,7 +165,7 @@ scale = Vector2( 0.3, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/WallRight5"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StartRoom/WallRight5"]
 position = Vector2( 534.395, 43.0132 )
@@ -175,7 +177,7 @@ margin_left = 736.71
 margin_top = 418.328
 margin_right = 854.71
 margin_bottom = 491.328
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Right-Click to push"
 align = 1
 autowrap = true
@@ -188,7 +190,7 @@ margin_left = 435.273
 margin_top = 160.324
 margin_right = 666.273
 margin_bottom = 189.324
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Left-Click here to pull"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -199,7 +201,7 @@ margin_left = -7.0
 margin_top = 309.0
 margin_right = 760.0
 margin_bottom = 524.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 1
 The Room"
 autowrap = true
@@ -214,7 +216,7 @@ margin_left = 820.013
 margin_top = -74.2245
 margin_right = 1080.01
 margin_bottom = -1.2245
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Push to move objects"
 align = 1
 autowrap = true
@@ -228,7 +230,7 @@ scale = Vector2( 1.4, 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall1"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room2/Wall1"]
 position = Vector2( 534.395, 43.0132 )
@@ -241,7 +243,7 @@ scale = Vector2( 0.35, 4.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall2"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room2/Wall2"]
 position = Vector2( 534.395, 43.0132 )
@@ -254,7 +256,7 @@ scale = Vector2( 0.299, 2.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall4"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room2/Wall4"]
 position = Vector2( 534.395, 43.0132 )
@@ -268,7 +270,7 @@ scale = Vector2( 0.2, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall6"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room2/Wall6"]
 position = Vector2( 534.395, 43.0132 )
@@ -282,7 +284,7 @@ scale = Vector2( 0.2, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall7"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room2/Wall7"]
 position = Vector2( 534.395, 43.0132 )
@@ -295,7 +297,7 @@ scale = Vector2( 0.1, 4.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall5"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room2/Wall5"]
 position = Vector2( 534.395, 43.0132 )
@@ -308,7 +310,7 @@ scale = Vector2( 0.4, 1.4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall3"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room2/Wall3"]
 position = Vector2( 534.395, 43.0132 )
@@ -320,7 +322,7 @@ margin_left = 1115.23
 margin_top = -1.82521
 margin_right = 1233.23
 margin_bottom = 123.175
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Push and pull of objects to move"
 align = 1
 autowrap = true
@@ -349,7 +351,7 @@ scale = Vector2( 0.5, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/Wall1"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room3/Wall1"]
 position = Vector2( 534.395, 43.0132 )
@@ -363,7 +365,7 @@ scale = Vector2( 0.35, 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/Wall2"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room3/Wall2"]
 position = Vector2( 534.395, 43.0132 )
@@ -376,7 +378,7 @@ scale = Vector2( 0.35, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/Wall3"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room3/Wall3"]
 position = Vector2( 534.395, 43.0132 )
@@ -389,7 +391,7 @@ scale = Vector2( 0.35, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room3/Wall4"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room3/Wall4"]
 position = Vector2( 534.395, 43.0132 )
@@ -401,7 +403,7 @@ margin_left = 1664.68
 margin_top = 147.591
 margin_right = 1854.68
 margin_bottom = 191.591
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Floor is lava"
 align = 1
 autowrap = true
@@ -417,7 +419,7 @@ margin_top = -1275.33
 margin_right = 3292.98
 margin_bottom = -1060.33
 rect_rotation = -90.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 2
 The Tower"
 align = 2
@@ -438,7 +440,7 @@ scale = Vector2( 5, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/WallRight6"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Tower/WallRight6"]
 position = Vector2( 534.395, 43.0132 )
@@ -451,7 +453,7 @@ scale = Vector2( 0.35, 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Wall5"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Tower/Wall5"]
 position = Vector2( 534.395, 43.0132 )
@@ -464,7 +466,7 @@ scale = Vector2( 0.35, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Wall6"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Tower/Wall6"]
 position = Vector2( 534.395, 43.0132 )
@@ -477,7 +479,7 @@ scale = Vector2( 0.35, 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Wall7"]
 position = Vector2( 532.396, 42.7887 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Tower/Wall7"]
 position = Vector2( 534.395, 43.0132 )
@@ -491,7 +493,7 @@ scale = Vector2( 0.5, 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Wall8"]
 position = Vector2( 535.603, 43.0132 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Tower/Wall8"]
 position = Vector2( 534.395, 43.0132 )
@@ -509,7 +511,7 @@ margin_left = -32.2346
 margin_top = -14.5551
 margin_right = 157.765
 margin_bottom = 29.4449
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Elevator"
 align = 1
 autowrap = true
@@ -522,7 +524,7 @@ margin_left = 1031.23
 margin_top = -660.225
 margin_right = 1221.23
 margin_bottom = -616.225
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Oh no"
 align = 1
 autowrap = true
@@ -535,7 +537,7 @@ margin_left = 2525.11
 margin_top = 316.674
 margin_right = 2715.11
 margin_bottom = 377.674
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Please wait for the elevator"
 align = 1
 autowrap = true
@@ -553,7 +555,7 @@ margin_left = 2777.35
 margin_top = -2121.86
 margin_right = 3048.35
 margin_bottom = -2077.86
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Look up!"
 align = 1
 autowrap = true
@@ -668,7 +670,7 @@ scale = Vector2( 0.1, 30 )
 position = Vector2( 3934.85, -4823.7 )
 
 [node name="Anchor11" parent="Riddle" instance=ExtResource( 3 )]
-position = Vector2( 4204.08, -7305.01 )
+position = Vector2( 4204.08, -7155.34 )
 
 [node name="Anchor9" parent="Riddle" instance=ExtResource( 3 )]
 position = Vector2( 3620.9, -5474.24 )
@@ -682,7 +684,7 @@ rotation = 0.0
 scale = Vector2( 0.15, 30 )
 
 [node name="Wall21" parent="Riddle" instance=ExtResource( 9 )]
-position = Vector2( 4198.72, -7828.43 )
+position = Vector2( 4198.84, -7669.85 )
 rotation = 0.0
 scale = Vector2( 0.01, 6 )
 
@@ -697,7 +699,7 @@ rotation = 0.0
 scale = Vector2( 0.02, 6 )
 
 [node name="Wall24" parent="Riddle" instance=ExtResource( 9 )]
-position = Vector2( 4823.11, -7898.67 )
+position = Vector2( 4910.01, -7900.94 )
 rotation = 0.0
 scale = Vector2( 0.5, 10 )
 
@@ -712,17 +714,56 @@ rotation = 0.0
 scale = Vector2( 0.2, 4 )
 
 [node name="Wall27" parent="Riddle" instance=ExtResource( 9 )]
-position = Vector2( 5532.34, -8590.81 )
+position = Vector2( 5441.42, -8590.78 )
 rotation = 1.5708
 scale = Vector2( 0.8, 15 )
 
 [node name="MoveableObject3" parent="Riddle" instance=ExtResource( 4 )]
-position = Vector2( 4736.87, -7010.77 )
+position = Vector2( 4828.27, -7007.77 )
 mass = 10.2041
 gravity_scale = 18.0
 
+[node name="Canyon" type="Node2D" parent="."]
+
+[node name="Body" parent="Canyon" instance=ExtResource( 10 )]
+position = Vector2( 7010.66, -7122.56 )
+
+[node name="Wall32" parent="Canyon" instance=ExtResource( 9 )]
+position = Vector2( 7146.36, -6829.38 )
+rotation = 1.5708
+scale = Vector2( 1, 5 )
+
+[node name="Wall33" parent="Canyon" instance=ExtResource( 9 )]
+position = Vector2( 9384.52, -6889.28 )
+rotation = 1.5708
+scale = Vector2( 1, 5 )
+
+[node name="Wall34" parent="Canyon" instance=ExtResource( 9 )]
+position = Vector2( 6713.96, -5822.67 )
+rotation = 0.0
+scale = Vector2( 2.5, 5 )
+
+[node name="Wall35" parent="Canyon" instance=ExtResource( 9 )]
+position = Vector2( 6206.72, -8732.23 )
+rotation = 0.0
+scale = Vector2( 3, 5 )
+
+[node name="Wall36" parent="Canyon" instance=ExtResource( 9 )]
+position = Vector2( 7040.35, -7137.04 )
+rotation = 0.0
+scale = Vector2( 0.1, 1 )
+
+[node name="Rope" parent="Canyon" instance=ExtResource( 11 )]
+position = Vector2( 7129.4, -7407.46 )
+rotation = 1.01578
+
+[node name="Wall37" parent="Canyon" instance=ExtResource( 9 )]
+position = Vector2( 7942.71, -8322.38 )
+rotation = 0.0
+scale = Vector2( 0.1, 1 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5030.39, -7203.22 )
+position = Vector2( 6742.74, -7177.52 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
