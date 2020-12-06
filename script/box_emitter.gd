@@ -7,7 +7,7 @@ func random_point():
 		rand_range(-shape.extents.y, shape.extents.y))
 
 func _on_Timer_timeout():
-	var box = preload("res://2d/MoveableObject.tscn").instance()
+	var box = preload("res://2d/MoveableObjectSmall.tscn").instance()
 	box.position = random_point()
 	box.rotation_degrees = rand_range(0, 360)
 	get_parent().get_parent().add_child(box)

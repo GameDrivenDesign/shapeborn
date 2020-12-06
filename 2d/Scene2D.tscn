@@ -789,6 +789,19 @@ scale = Vector2( 0.1, 1 )
 
 [node name="Projectiles" type="Node2D" parent="."]
 
+[node name="Label9" type="Label" parent="Projectiles"]
+margin_left = 9512.0
+margin_top = -7296.0
+margin_right = 9702.0
+margin_bottom = -7235.0
+custom_fonts/font = ExtResource( 10 )
+text = "Press space to slow time for 3s"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Wall41" parent="Projectiles" instance=ExtResource( 9 )]
 position = Vector2( 9408, -8736 )
 rotation = 0.0
@@ -1055,7 +1068,7 @@ scale = Vector2( 0.714234, 2.89891 )
 position = Vector2( 176, 280 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 4682.4, -4790.76 )
+position = Vector2( 10184, -10576 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
