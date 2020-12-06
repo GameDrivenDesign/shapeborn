@@ -8,5 +8,5 @@ func _ready():
 
 func on_enter(body):
 	if body.is_in_group("player"):
-		print("enter")
 		get_node(door).set_enabled(true)
+		$"../Boss".start()
