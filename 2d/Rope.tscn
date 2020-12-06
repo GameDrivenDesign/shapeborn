@@ -7,10 +7,10 @@
 [node name="Rope" type="StaticBody2D"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="body" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="joint" type="PinJoint2D" parent="."]
+[node name="joint" type="PinJoint2D" parent="body"]
 position = Vector2( 0, 9.43875 )
 node_a = NodePath("..")
 node_b = NodePath("RigidBody2D")

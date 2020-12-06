@@ -7,11 +7,13 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.9426
 
-[node name="Body" type="KinematicBody2D" groups=[
+[node name="Body" type="RigidBody2D" groups=[
 "anchor",
 ]]
 z_index = 1
 input_pickable = true
+mass = 10.2041
+gravity_scale = 18.0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

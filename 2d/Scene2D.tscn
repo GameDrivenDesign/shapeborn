@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://2d/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/object.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://script/Elevator.gd" type="Script" id=7]
 [ext_resource path="res://2d/Bar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://2d/Wall.tscn" type="PackedScene" id=9]
-[ext_resource path="res://2d/MoveableAnchor.tscn" type="PackedScene" id=10]
 [ext_resource path="res://2d/Rope.tscn" type="PackedScene" id=11]
 [ext_resource path="res://2d/checkpoint.tscn" type="PackedScene" id=12]
 [ext_resource path="res://2d/projectile_emitter.tscn" type="PackedScene" id=13]
@@ -737,9 +736,6 @@ gravity_scale = 18.0
 
 [node name="Canyon" type="Node2D" parent="."]
 
-[node name="Body" parent="Canyon" instance=ExtResource( 10 )]
-position = Vector2( 7010.66, -7122.56 )
-
 [node name="Lava" parent="Canyon" instance=ExtResource( 6 )]
 position = Vector2( 7136, -5960 )
 scale = Vector2( 2.24, 7.24 )
@@ -750,7 +746,7 @@ rotation = 1.5708
 scale = Vector2( 1, 5 )
 
 [node name="Wall33" parent="Canyon" instance=ExtResource( 9 )]
-position = Vector2( 9384.52, -6889.28 )
+position = Vector2( 9385.93, -6608.56 )
 rotation = 1.5708
 scale = Vector2( 1, 5 )
 
@@ -765,13 +761,14 @@ rotation = 0.0
 scale = Vector2( 3, 5 )
 
 [node name="Wall36" parent="Canyon" instance=ExtResource( 9 )]
-position = Vector2( 7040.35, -7137.04 )
-rotation = 0.0
+position = Vector2( 7010.62, -7022.06 )
+rotation = -0.760963
 scale = Vector2( 0.1, 1 )
 
 [node name="Rope" parent="Canyon" instance=ExtResource( 11 )]
-position = Vector2( 7129.4, -7407.46 )
-rotation = 1.01578
+position = Vector2( 8291.88, -8230.53 )
+rotation = 0.872665
+pieces = 23
 
 [node name="Wall37" parent="Canyon" instance=ExtResource( 9 )]
 position = Vector2( 7942.71, -8322.38 )
@@ -896,7 +893,7 @@ position = Vector2( 664.004, -479.997 )
 rotation = -3.14159
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 9576, -7248 )
+position = Vector2( 6770.57, -7154.92 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
