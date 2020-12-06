@@ -769,34 +769,46 @@ position = Vector2( 7136, -5960 )
 scale = Vector2( 2.24, 7.24 )
 
 [node name="Wall32" parent="Canyon" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 7146.36, -6829.38 )
 rotation = 1.5708
 scale = Vector2( 1, 5 )
+dark = true
 
 [node name="Wall33" parent="Canyon" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 9385.93, -6608.56 )
 rotation = 1.5708
 scale = Vector2( 1, 5 )
+dark = true
 
 [node name="Wall39" parent="Canyon" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 9380.27, -6885.75 )
 rotation = 0.994829
 scale = Vector2( 0.247472, 5.8775 )
+dark = true
 
 [node name="Wall38" parent="Canyon" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 9040, -6448 )
 rotation = 1.5708
 scale = Vector2( 0.04, 2.08 )
+dark = true
 
 [node name="Wall34" parent="Canyon" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 6713.96, -5822.67 )
 rotation = 0.0
 scale = Vector2( 2.5, 5 )
+dark = true
 
 [node name="Wall35" parent="Canyon" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 6206.72, -8732.23 )
 rotation = 0.0
 scale = Vector2( 3, 5 )
+dark = true
 
 [node name="Wall36" parent="Canyon" instance=ExtResource( 9 )]
 position = Vector2( 7010.62, -7022.06 )
@@ -809,36 +821,48 @@ rotation = 0.872665
 pieces = 23
 
 [node name="Wall37" parent="Canyon" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 7942.71, -8322.38 )
 rotation = 0.0
 scale = Vector2( 0.1, 1 )
+dark = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Wall41" parent="Projectiles" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 9408, -8736 )
 rotation = 0.0
 scale = Vector2( 3.76, 15.52 )
+dark = true
 
 [node name="Wall38" parent="Projectiles" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 9384, -6888 )
 rotation = 0.0
 scale = Vector2( 4.39999, 5 )
+dark = true
 
 [node name="Wall42" parent="Projectiles" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 9992, -7112 )
 rotation = 0.0
 scale = Vector2( 0.29722, 2.82602 )
+dark = true
 
 [node name="Wall46" parent="Projectiles" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 9392.12, -7122.38 )
 rotation = 0.0
 scale = Vector2( 0.29722, 2.82602 )
+dark = true
 
 [node name="Wall43" parent="Projectiles" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 10664, -7400 )
 rotation = 0.0
 scale = Vector2( 0.29722, 2.82602 )
+dark = true
 
 [node name="Anchor12" parent="Projectiles" instance=ExtResource( 3 )]
 position = Vector2( 10160, -7392 )
@@ -871,19 +895,25 @@ position = Vector2( 12168, -7392 )
 position = Vector2( 13152, -7392 )
 
 [node name="Wall44" parent="Projectiles" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 11680, -7128 )
 rotation = 0.0
 scale = Vector2( 0.29722, 2.82602 )
+dark = true
 
 [node name="Wall45" parent="Projectiles" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 12488, -7400 )
 rotation = 0.0
 scale = Vector2( 0.29722, 2.82602 )
+dark = true
 
 [node name="Wall47" parent="Projectiles" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 13368, -7400 )
 rotation = 0.0
 scale = Vector2( 0.0572201, 2.82602 )
+dark = true
 
 [node name="projectile_emitter" parent="Projectiles" instance=ExtResource( 13 )]
 position = Vector2( 9864, -7384 )
@@ -954,37 +984,49 @@ position = Vector2( 13760, -8648 )
 position = Vector2( 13424, -8736 )
 
 [node name="Wall39" parent="ClimbProjectiles" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 13760, -6792 )
 rotation = -1.57079
 scale = Vector2( 2.36001, 5 )
+dark = true
 
 [node name="Wall40" parent="ClimbProjectiles" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 13760, -9264 )
 rotation = -3.14159
 scale = Vector2( 0.720012, 6.36 )
+dark = true
 
 [node name="BoxWall" type="Node2D" parent="."]
 position = Vector2( 11512, -8552 )
 
 [node name="Wall41" parent="BoxWall" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 1488, -944.001 )
 rotation = -3.14159
 scale = Vector2( 0.80002, 3.68 )
+dark = true
 
 [node name="Wall49" parent="BoxWall" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 631.999, -944 )
 rotation = -2.09439
 scale = Vector2( 1.83819, 3.68 )
+dark = true
 
 [node name="Wall43" parent="BoxWall" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( -1616, -1952 )
 rotation = 0.0
 scale = Vector2( 0.80002, 20.48 )
+dark = true
 
 [node name="Wall42" parent="BoxWall" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 0, 0 )
 rotation = -2.09439
 scale = Vector2( 1.9446, 3.68 )
+dark = true
 
 [node name="Anchor28" parent="BoxWall" instance=ExtResource( 3 )]
 position = Vector2( 95.999, -464 )
@@ -1042,19 +1084,25 @@ position = Vector2( 1536, -568 )
 gravity_scale = 18.0
 
 [node name="Wall44" parent="BoxWall" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( -3224, -4488 )
 rotation = 0.0
 scale = Vector2( 0.80002, 49.88 )
+dark = true
 
 [node name="Wall47" parent="BoxWall" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( -1616, -4424 )
 rotation = 0.0
 scale = Vector2( 0.80002, 6.63996 )
+dark = true
 
 [node name="Wall48" parent="BoxWall" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( -2384, -4456 )
 rotation = 0.0
 scale = Vector2( 0.724245, 0.399792 )
+dark = true
 
 [node name="box_emitter" parent="BoxWall" instance=ExtResource( 15 )]
 position = Vector2( -1792, -4136 )
@@ -1063,26 +1111,34 @@ position = Vector2( -1792, -4136 )
 position = Vector2( -1184, -1960 )
 
 [node name="Wall45" parent="BoxWall" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( -1616.28, -3640 )
 rotation = 0.0
 scale = Vector2( 0.80002, 12.64 )
+dark = true
 
 [node name="Wall46" parent="BoxWall" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( -1616, -2552 )
 rotation = 0.0
 scale = Vector2( 0.554234, 4.61149 )
+dark = true
 
 [node name="Wall50" parent="BoxWall" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( -824.001, -2800 )
 rotation = 0.0
 scale = Vector2( 0.714234, 2.89891 )
+dark = true
 
 [node name="End" type="Node2D" parent="."]
 
 [node name="Wall39" parent="End" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 10659.2, -11516.8 )
 rotation = 0.0
 scale = Vector2( 6, 4 )
+dark = true
 
 [node name="Anchor12" parent="End" instance=ExtResource( 3 )]
 position = Vector2( 14806, -12029.5 )
@@ -1127,44 +1183,60 @@ position = Vector2( 14810.7, -12484.6 )
 position = Vector2( 15517.3, -12491.8 )
 
 [node name="Wall40" parent="End" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 10530.7, -12986.7 )
 rotation = 0.0
 scale = Vector2( 4, 4 )
+dark = true
 
 [node name="Wall41" parent="End" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 14274.4, -12644.2 )
 rotation = 0.0
 scale = Vector2( 0.5, 10 )
+dark = true
 
 [node name="Wall42" parent="End" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 16452.6, -12576.4 )
 rotation = 0.0
 scale = Vector2( 0.5, 13 )
+dark = true
 
 [node name="Wall44" parent="End" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 16324.7, -11843.6 )
 rotation = 0.0
 scale = Vector2( 0.5, 6 )
+dark = true
 
 [node name="Wall45" parent="End" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 15734.7, -12265.4 )
 rotation = 0.0
 scale = Vector2( 0.2, 0.4 )
+dark = true
 
 [node name="Wall46" parent="End" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 15077.9, -12265.4 )
 rotation = 0.0
 scale = Vector2( 0.2, 0.4 )
+dark = true
 
 [node name="Door" parent="End" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 14723.2, -11852.2 )
 rotation = 0.0
 scale = Vector2( 0.08, 5 )
+dark = true
 
 [node name="Wall43" parent="End" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 14617.6, -12834.9 )
 rotation = 0.0
 scale = Vector2( 3, 4 )
+dark = true
 
 [node name="Bar4" parent="End" instance=ExtResource( 8 )]
 position = Vector2( 16388.6, -11836.8 )
