@@ -15,7 +15,9 @@ func highlight(highlighted):
 		for o in others:
 			o.highlight(false)
 	else:
-		selected = false
+		# do not deselect immediately; instead wait for the mouse button to be
+		# raised so that the user has more control with many anchors on the screen
+		# selected = false
 		update()
 	
 	self.highlighted = highlighted
@@ -43,9 +45,9 @@ func _process(delta):
 
 func _draw():
 	if selected:
-		var end = (player.global_position - global_position).rotated(-rotation)
+		var end = (player.global_position - global_position).rotated(-global_rotation)
 		var start = Vector2.ZERO
-		# start the line just "outside" the player
+		# end the line just "outside" the player
 		end -= end.normalized() * 50
 		
 		var arrow_distance = 20

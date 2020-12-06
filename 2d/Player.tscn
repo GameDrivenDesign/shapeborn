@@ -7,7 +7,7 @@
 radius = 51.8661
 
 [sub_resource type="Curve" id=2]
-_data = [ Vector2( 0, 0.936364 ), 0.0, 0.0, 0, 0, Vector2( 0.996743, 0.254545 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.463636 ), 0.0, 3.67893, 0, 0, Vector2( 0.996743, 0.254545 ), -2.20334, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=3]
 curve = SubResource( 2 )
@@ -19,7 +19,7 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = 24.84
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 19.63
+scale = 14.0
 scale_random = 0.94
 scale_curve = SubResource( 3 )
 
