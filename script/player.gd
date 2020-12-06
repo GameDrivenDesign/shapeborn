@@ -12,6 +12,8 @@ var last_checkpoint
 var time_is_slow = false
 
 func _ready():
+	if OS.has_feature("standalone"):
+		position = get_parent().get_node("startPoint").position
 	start_pos = position
 	anchors = get_tree().get_nodes_in_group("anchor")
 
