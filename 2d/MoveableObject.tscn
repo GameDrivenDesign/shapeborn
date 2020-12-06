@@ -9,6 +9,7 @@ extents = Vector2( 76.8188, 76.885 )
 
 [node name="MoveableObject" type="RigidBody2D" groups=[
 "anchor",
+"die_on_impact",
 ]]
 input_pickable = true
 script = ExtResource( 3 )
