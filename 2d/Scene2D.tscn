@@ -740,6 +740,10 @@ gravity_scale = 18.0
 [node name="Body" parent="Canyon" instance=ExtResource( 10 )]
 position = Vector2( 7010.66, -7122.56 )
 
+[node name="Lava" parent="Canyon" instance=ExtResource( 6 )]
+position = Vector2( 7136, -5960 )
+scale = Vector2( 2.24, 7.24 )
+
 [node name="Wall32" parent="Canyon" instance=ExtResource( 9 )]
 position = Vector2( 7146.36, -6829.38 )
 rotation = 1.5708
