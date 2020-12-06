@@ -1,5 +1,7 @@
 extends Node2D
 
+signal reset
+
 func _ready():
 	$ViewportContainer.material.set_shader_param(
 		"ViewportTexture",
