@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Roboto-Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://2d/checkpoint.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 17.3624, 172.791 )
+
+[node name="checkpoint" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_rotation = -89.9999
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.51, 1.16, 30.06, 1 )
+text = "CHECKPOINT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 17.1005, -115.586 )
+shape = SubResource( 2 )
+
+[node name="spawn_point" type="Node2D" parent="."]
+position = Vector2( 21.0224, -58.2321 )
+[connection signal="body_entered" from="." to="." method="_on_checkpoint_body_entered"]
