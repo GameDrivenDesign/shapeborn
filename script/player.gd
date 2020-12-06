@@ -35,11 +35,14 @@ func slow_time():
 	$slow_time_tween.start()
 	yield($slow_time_tween, "tween_completed")
 
+func mouse_dist(obj):
+	 return obj.get_local_mouse_position().length()
+
 func get_min_anchor():
 	var minAnchor = anchors[0]
-	var minDistance = anchors[0].get_local_mouse_position().length()
+	var minDistance = mouse_dist(anchors[0])
 	for anchor in anchors:
-		var distance = anchor.get_local_mouse_position().length()
+		var distance = mouse_dist(anchor)
 		if distance < minDistance:
 			minDistance = distance
 			minAnchor = anchor
