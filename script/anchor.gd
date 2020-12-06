@@ -3,17 +3,15 @@ extends Node2D
 var highlighted = false
 var selected = false
 var player
-var others
 
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
-	others = get_tree().get_nodes_in_group("anchor")
-	others.remove(others.find(self))
 
 func highlight(highlighted):
 	if highlighted:
-		for o in others:
-			o.highlight(false)
+		for o in get_tree().get_nodes_in_group("anchor"):
+			if o != self:
+				o.highlight(false)
 	else:
 		# do not deselect immediately; instead wait for the mouse button to be
 		# raised so that the user has more control with many anchors on the screen

@@ -6,7 +6,6 @@ export var max_distance = 400
 
 var start_pos
 var dead = false
-var anchors
 
 var last_checkpoint
 var time_is_slow = false
@@ -15,10 +14,10 @@ func _ready():
 	if OS.has_feature("standalone"):
 		position = get_parent().get_node("startPoint").position
 	start_pos = position
-	anchors = get_tree().get_nodes_in_group("anchor")
 
 func _process(delta):
-	var minAnchor = get_min_anchor()
+	var anchors = get_tree().get_nodes_in_group("anchor")
+	var minAnchor = get_min_anchor(anchors)
 	if minAnchor != null:
 		minAnchor.highlight(true)
 	else:
@@ -46,7 +45,7 @@ func slow_time():
 func mouse_dist(obj):
 	 return obj.get_local_mouse_position().length()
 
-func get_min_anchor():
+func get_min_anchor(anchors):
 	var minAnchor = anchors[0]
 	var minDistance = mouse_dist(anchors[0])
 	for anchor in anchors:

@@ -12,6 +12,7 @@ extents = Vector2( 76.8188, 76.885 )
 "die_on_impact",
 ]]
 input_pickable = true
+mass = 20.4082
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
