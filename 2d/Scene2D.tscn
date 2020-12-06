@@ -635,14 +635,34 @@ position = Vector2( 4561.96, -7752.71 )
 scale = Vector2( 0.522, 2 )
 
 [node name="Wall18" parent="Riddle" instance=ExtResource( 9 )]
-position = Vector2( 3294.34, -6833.6 )
+position = Vector2( 3294.34, -6960 )
 rotation = 0.0
-scale = Vector2( 0.15, 30 )
+scale = Vector2( 0.15, 32 )
 
 [node name="Wall20" parent="Riddle" instance=ExtResource( 9 )]
-position = Vector2( 4403.28, -8161.83 )
-rotation = 0.698132
-scale = Vector2( 0.15, 20 )
+position = Vector2( 3823.19, -9051.85 )
+rotation = 0.523599
+scale = Vector2( 1, 30 )
+
+[node name="Wall28" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 2700.99, -7158.79 )
+rotation = -0.237365
+scale = Vector2( 0.1, 30 )
+
+[node name="Wall29" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 2690.92, -7617.4 )
+rotation = -0.237365
+scale = Vector2( 0.1, 30 )
+
+[node name="Wall30" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 2685.88, -8005.46 )
+rotation = -0.237365
+scale = Vector2( 0.1, 30 )
+
+[node name="Wall31" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 2680.85, -8448.95 )
+rotation = -0.237365
+scale = Vector2( 0.1, 30 )
 
 [node name="Anchor8" parent="Riddle" instance=ExtResource( 3 )]
 position = Vector2( 3934.85, -4823.7 )
@@ -702,7 +722,7 @@ mass = 10.2041
 gravity_scale = 18.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 84.8861, 424.277 )
+position = Vector2( 5030.39, -7203.22 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
