@@ -43,7 +43,7 @@ func _process(delta):
 
 func _draw():
 	if selected:
-		var end = player.global_position - global_position
+		var end = (player.global_position - global_position).rotated(-rotation)
 		var start = Vector2.ZERO
 		# start the line just "outside" the player
 		end -= end.normalized() * 50
