@@ -743,6 +743,74 @@ position = Vector2( 7942.71, -8322.38 )
 rotation = 0.0
 scale = Vector2( 0.1, 1 )
 
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Wall41" parent="Projectiles" instance=ExtResource( 9 )]
+position = Vector2( 9408, -8736 )
+rotation = 0.0
+scale = Vector2( 3.76, 12.32 )
+
+[node name="Wall38" parent="Projectiles" instance=ExtResource( 9 )]
+position = Vector2( 9384, -6888 )
+rotation = 0.0
+scale = Vector2( 4.39999, 5 )
+
+[node name="Wall42" parent="Projectiles" instance=ExtResource( 9 )]
+position = Vector2( 9992, -7112 )
+rotation = 0.0
+scale = Vector2( 0.29722, 2.82602 )
+
+[node name="Wall46" parent="Projectiles" instance=ExtResource( 9 )]
+position = Vector2( 9408, -7120 )
+rotation = 0.0
+scale = Vector2( 0.29722, 2.82602 )
+
+[node name="Wall43" parent="Projectiles" instance=ExtResource( 9 )]
+position = Vector2( 10672, -7680 )
+rotation = 0.0
+scale = Vector2( 0.29722, 2.82602 )
+
+[node name="Anchor12" parent="Projectiles" instance=ExtResource( 3 )]
+position = Vector2( 10176, -7672 )
+
+[node name="Anchor17" parent="Projectiles" instance=ExtResource( 3 )]
+position = Vector2( 10832, -7440 )
+
+[node name="Anchor18" parent="Projectiles" instance=ExtResource( 3 )]
+position = Vector2( 12720, -7440 )
+
+[node name="Anchor16" parent="Projectiles" instance=ExtResource( 3 )]
+position = Vector2( 9664, -7672 )
+
+[node name="Anchor13" parent="Projectiles" instance=ExtResource( 3 )]
+position = Vector2( 11352, -7672 )
+
+[node name="Anchor14" parent="Projectiles" instance=ExtResource( 3 )]
+position = Vector2( 12184, -7672 )
+
+[node name="Anchor15" parent="Projectiles" instance=ExtResource( 3 )]
+position = Vector2( 13128, -7672 )
+
+[node name="Wall44" parent="Projectiles" instance=ExtResource( 9 )]
+position = Vector2( 11680, -7128 )
+rotation = 0.0
+scale = Vector2( 0.29722, 2.82602 )
+
+[node name="Wall45" parent="Projectiles" instance=ExtResource( 9 )]
+position = Vector2( 12560, -7680 )
+rotation = 0.0
+scale = Vector2( 0.29722, 2.82602 )
+
+[node name="Wall39" parent="Projectiles" instance=ExtResource( 9 )]
+position = Vector2( 14080, -6784 )
+rotation = -1.57079
+scale = Vector2( 5.24001, 5 )
+
+[node name="Wall40" parent="Projectiles" instance=ExtResource( 9 )]
+position = Vector2( 12992, -8736 )
+rotation = -1.57079
+scale = Vector2( 3.5084, 5.00571 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 6742.74, -7177.52 )
 gravity_scale = 18.0
@@ -755,17 +823,17 @@ limit_bottom = 550
 [node name="checkpoint" parent="." instance=ExtResource( 12 )]
 position = Vector2( 678.8, 377.085 )
 
+[node name="checkpoint3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2723.8, -2116.8 )
+
+[node name="checkpoint5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 6251.75, -7071.15 )
+
+[node name="checkpoint6" parent="." instance=ExtResource( 12 )]
+position = Vector2( 4939.5, -7040.27 )
+
+[node name="checkpoint4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 4118.56, -4107.48 )
+
 [node name="checkpoint2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1569.49, 129.453 )
-
-[node name="checkpoint" parent="checkpoint2" instance=ExtResource( 12 )]
-position = Vector2( 1154.31, -2246.25 )
-
-[node name="checkpoint2" parent="checkpoint2" instance=ExtResource( 12 )]
-position = Vector2( 2549.08, -4236.93 )
-
-[node name="checkpoint" parent="checkpoint2/checkpoint2" instance=ExtResource( 12 )]
-position = Vector2( 820.939, -2932.79 )
-
-[node name="checkpoint2" parent="checkpoint2/checkpoint2" instance=ExtResource( 12 )]
-position = Vector2( 2133.19, -2963.67 )
