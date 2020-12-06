@@ -224,7 +224,7 @@ __meta__ = {
 
 [node name="Wall1" type="StaticBody2D" parent="Room2"]
 position = Vector2( 710.141, -451.127 )
-scale = Vector2( 1.1, 4 )
+scale = Vector2( 1.4, 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/Wall1"]
 position = Vector2( 535.603, 43.0132 )
@@ -472,11 +472,11 @@ scale = Vector2( 2.08748, 0.168908 )
 texture = ExtResource( 2 )
 
 [node name="Wall7" type="StaticBody2D" parent="Tower"]
-position = Vector2( 2527.67, -2317.27 )
-scale = Vector2( 0.35, 0.5 )
+position = Vector2( 2529.23, -3135.97 )
+scale = Vector2( 0.35, 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Wall7"]
-position = Vector2( 535.603, 43.0132 )
+position = Vector2( 532.396, 42.7887 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Tower/Wall7"]
@@ -485,9 +485,9 @@ scale = Vector2( 2.08748, 0.168908 )
 texture = ExtResource( 2 )
 
 [node name="Wall8" type="StaticBody2D" parent="Tower"]
-position = Vector2( 2540.11, -2317.27 )
+position = Vector2( 2532.11, -2567.27 )
 rotation = 1.5708
-scale = Vector2( 0.25, 0.5 )
+scale = Vector2( 0.5, 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Wall8"]
 position = Vector2( 535.603, 43.0132 )
@@ -548,19 +548,6 @@ position = Vector2( 2715.11, -2274.14 )
 
 [node name="Slope" type="Node2D" parent="."]
 
-[node name="Label9" type="Label" parent="Slope"]
-margin_left = 5248.65
-margin_top = -4580.64
-margin_right = 6015.65
-margin_bottom = -4365.64
-custom_fonts/font = SubResource( 4 )
-text = "The End (for now)"
-align = 2
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Label7" type="Label" parent="Slope"]
 margin_left = 2777.35
 margin_top = -2121.86
@@ -578,6 +565,11 @@ __meta__ = {
 position = Vector2( 3046.62, -2322.64 )
 rotation = -1.0472
 scale = Vector2( 2, 6 )
+
+[node name="Wall17" parent="Slope" instance=ExtResource( 9 )]
+position = Vector2( 2243.77, -2460.28 )
+rotation = -1.0472
+scale = Vector2( 2, 4 )
 
 [node name="Wall10" parent="Slope" instance=ExtResource( 9 )]
 position = Vector2( 4077.99, -4071.01 )
@@ -610,9 +602,9 @@ rotation = 0.0
 scale = Vector2( 0.15, 2 )
 
 [node name="Wall16" parent="Slope" instance=ExtResource( 9 )]
-position = Vector2( 5094.65, -4496.65 )
+position = Vector2( 3183.85, -5001.53 )
 rotation = 0.0
-scale = Vector2( 1, 2 )
+scale = Vector2( 0.4, 10 )
 
 [node name="Anchor4" parent="Slope" instance=ExtResource( 3 )]
 position = Vector2( 3140.07, -2474.7 )
@@ -631,8 +623,86 @@ position = Vector2( 4672.44, -4581.07 )
 mass = 10.2041
 gravity_scale = 18.0
 
+[node name="Riddle" type="Node2D" parent="."]
+position = Vector2( 824.231, -135.628 )
+
+[node name="Bar2" parent="Riddle" instance=ExtResource( 8 )]
+position = Vector2( 4394.63, -6912.03 )
+scale = Vector2( 0.522, 2 )
+
+[node name="Bar3" parent="Riddle" instance=ExtResource( 8 )]
+position = Vector2( 4561.96, -7752.71 )
+scale = Vector2( 0.522, 2 )
+
+[node name="Wall18" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 3294.34, -6833.6 )
+rotation = 0.0
+scale = Vector2( 0.15, 30 )
+
+[node name="Wall20" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 4403.28, -8161.83 )
+rotation = 0.698132
+scale = Vector2( 0.15, 20 )
+
+[node name="Anchor8" parent="Riddle" instance=ExtResource( 3 )]
+position = Vector2( 3934.85, -4823.7 )
+
+[node name="Anchor11" parent="Riddle" instance=ExtResource( 3 )]
+position = Vector2( 4204.08, -7305.01 )
+
+[node name="Anchor9" parent="Riddle" instance=ExtResource( 3 )]
+position = Vector2( 3620.9, -5474.24 )
+
+[node name="Anchor10" parent="Riddle" instance=ExtResource( 3 )]
+position = Vector2( 3971.62, -6277.51 )
+
+[node name="Wall19" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 4117.88, -6922.2 )
+rotation = 0.0
+scale = Vector2( 0.15, 30 )
+
+[node name="Wall21" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 4198.72, -7828.43 )
+rotation = 0.0
+scale = Vector2( 0.01, 6 )
+
+[node name="Wall22" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 4185.66, -6928.12 )
+rotation = 0.0
+scale = Vector2( 2, 4 )
+
+[node name="Wall23" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 4454.43, -7434.72 )
+rotation = 0.0
+scale = Vector2( 0.02, 6 )
+
+[node name="Wall24" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 4823.11, -7898.67 )
+rotation = 0.0
+scale = Vector2( 0.5, 10 )
+
+[node name="Wall26" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 4798.28, -7951.81 )
+rotation = 0.0
+scale = Vector2( 0.5, 10 )
+
+[node name="Wall25" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 4457.97, -7435.11 )
+rotation = 0.0
+scale = Vector2( 0.2, 4 )
+
+[node name="Wall27" parent="Riddle" instance=ExtResource( 9 )]
+position = Vector2( 5532.34, -8590.81 )
+rotation = 1.5708
+scale = Vector2( 0.8, 15 )
+
+[node name="MoveableObject3" parent="Riddle" instance=ExtResource( 4 )]
+position = Vector2( 4736.87, -7010.77 )
+mass = 10.2041
+gravity_scale = 18.0
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 4402.9, -4197.85 )
+position = Vector2( 84.8861, 424.277 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
