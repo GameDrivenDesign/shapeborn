@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://2d/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/object.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://2d/box_killzone.tscn" type="PackedScene" id=14]
 [ext_resource path="res://2d/box_emitter.tscn" type="PackedScene" id=15]
 [ext_resource path="res://2d/BossTrigger.gd" type="Script" id=16]
+[ext_resource path="res://assets/player.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 535.011, 43.5632 )
@@ -38,6 +39,9 @@ extents = Vector2( 534.938, 43.9859 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 622.266, 128.901 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 65.399
 
 [node name="scene" type="Node2D"]
 
@@ -1157,11 +1161,21 @@ position = Vector2( -150.016, -305.553 )
 scale = Vector2( 0.08, 5 )
 shape = SubResource( 7 )
 
+[node name="Boss" type="StaticBody2D" parent="End"]
+position = Vector2( 15624.8, -11855.6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End/Boss"]
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="End/Boss"]
+scale = Vector2( 0.254362, 0.254362 )
+texture = ExtResource( 17 )
+
 [node name="startPoint" type="Node2D" parent="."]
 position = Vector2( 176, 280 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 14238.1, -11611.3 )
+position = Vector2( 106.808, 426.006 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
