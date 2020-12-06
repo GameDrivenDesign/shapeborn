@@ -51,4 +51,5 @@ respawn_at_checkpoint={
 
 quality/directional_shadow/size=8192
 quality/shadow_atlas/size=8192
+environment/default_clear_color=Color( 0.2, 0.2, 0.2, 1 )
 environment/default_environment="res://default_env.tres"
