@@ -676,7 +676,7 @@ position = Vector2( 4391.77, -6920.37 )
 position = Vector2( 4559.77, -7744.37 )
 
 [node name="Wall18" parent="Riddle" instance=ExtResource( 9 )]
-position = Vector2( 3317.02, -6960 )
+position = Vector2( 3291.62, -6960 )
 rotation = 0.0
 scale = Vector2( 0.15, 32 )
 
@@ -1119,7 +1119,7 @@ scale = Vector2( 0.724245, 0.399792 )
 dark = true
 
 [node name="box_emitter" parent="BoxWall" instance=ExtResource( 15 )]
-position = Vector2( -1792, -4136 )
+position = Vector2( -1771, -4171 )
 
 [node name="checkpoint" parent="BoxWall" instance=ExtResource( 12 )]
 position = Vector2( -1184, -1960 )
