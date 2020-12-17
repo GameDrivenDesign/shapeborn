@@ -4,7 +4,7 @@ var loading = false
 var score
 
 func _ready():
-	score = OS.get_ticks_msec() - Global.start_time
+	score = int((OS.get_ticks_msec() - Global.start_time) / 1000)
 	$score.text = str(score)
 	$TextEdit.grab_focus()
 
@@ -28,7 +28,7 @@ func send_highscore(game: String, player: String, score: int):
 	remove_child(http_request)
 	
 	var res = JSON.parse(response[3].get_string_from_utf8()).result
-	get_tree().change_scene("res://scenes/newgame.tscn")
+	
 	if res.has("position"):
 		var position = res["position"]
 		$Button2.text = "Retry"
@@ -40,7 +40,7 @@ func send_my_highscore():
 	if !loading && len($TextEdit.text) > 0:
 		loading = true
 		$Button.disabled = true
-		send_highscore(Global.GAME_NAME, $TextEdit.text, score)
+		send_highscore(Global.GAME_NAME, $TextEdit.text, -score)
 
 func _on_Button_pressed():
 	send_my_highscore()

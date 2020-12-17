@@ -75,6 +75,8 @@ func die():
 	visible = false
 	running = false
 	$"../Win".visible = true
+	
+	get_tree().change_scene("res://2d/gameover.tscn")
 
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("player"):

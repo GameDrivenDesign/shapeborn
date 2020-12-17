@@ -13,7 +13,3 @@ func set_zoom_strength(val):
 	$ViewportContainer.material.set_shader_param(
 		"ZoomStrength",
 		val)
-
-func _process(delta):
-	if Input.is_action_just_pressed("ui_left"):
-		get_tree().change_scene("res://2d/gameover.tscn")
