@@ -6,11 +6,11 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 51.8661
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 1, 0, 0, 0.301961, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
 
 [sub_resource type="ParticlesMaterial" id=4]
 flag_disable_z = true
@@ -19,7 +19,7 @@ gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.2
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 3 )
 
 [node name="Player" type="RigidBody2D" groups=[
 "player",
@@ -28,6 +28,8 @@ position = Vector2( 52.326, -39.598 )
 mass = 10.2041
 gravity_scale = 19.47
 continuous_cd = 1
+contacts_reported = 6
+contact_monitor = true
 script = ExtResource( 2 )
 force_strength = 80000
 

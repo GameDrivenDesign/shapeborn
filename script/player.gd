@@ -119,7 +119,7 @@ func get_impulse(anchor, delta):
 func die():
 	dead = true
 
-func _integrate_forces(state):
+func _integrate_forces(state: Physics2DDirectBodyState):
 	if state.linear_velocity.length() > max_velocity:
 		state.linear_velocity = state.linear_velocity.normalized() * max_velocity
 	
@@ -127,6 +127,12 @@ func _integrate_forces(state):
 		state.transform = Transform2D(0, last_checkpoint.get_spawn_position() if last_checkpoint else start_pos)
 		state.linear_velocity = Vector2.ZERO
 		dead = false
+	
+	for i in range(state.get_contact_count()):
+		var object = state.get_contact_collider_object(i)
+		if object.is_in_group("boss"):
+			apply_central_impulse((global_position - object.global_position) * 100)
+			object.take_damage()
 	
 	var velocity = state.linear_velocity.length()
 	$movement_particles.emitting = velocity > 50.0

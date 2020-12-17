@@ -10,7 +10,7 @@ margin_left = 266.317
 margin_top = 149.292
 margin_right = 522.317
 margin_bottom = 170.292
-text = "Congratulations! Your score:"
+text = "Congratulations! Your finished in (seconds):"
 __meta__ = {
 "_edit_use_anchors_": false
 }

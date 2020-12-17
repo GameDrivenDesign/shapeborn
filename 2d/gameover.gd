@@ -4,7 +4,7 @@ var loading = false
 var score
 
 func _ready():
-	score = OS.get_ticks_msec() - Global.start_time
+	score = int((OS.get_ticks_msec() - Global.start_time) / 1000)
 	$score.text = str(score)
 	$TextEdit.grab_focus()
 
@@ -40,7 +40,7 @@ func send_my_highscore():
 	if !loading && len($TextEdit.text) > 0:
 		loading = true
 		$Button.disabled = true
-		send_highscore(Global.GAME_NAME, $TextEdit.text, score)
+		send_highscore(Global.GAME_NAME, $TextEdit.text, -score)
 
 func _on_Button_pressed():
 	send_my_highscore()

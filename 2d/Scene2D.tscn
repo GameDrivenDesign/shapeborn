@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://2d/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/object.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://2d/box_emitter.tscn" type="PackedScene" id=15]
 [ext_resource path="res://2d/BossTrigger.gd" type="Script" id=16]
 [ext_resource path="res://assets/player.png" type="Texture" id=17]
+[ext_resource path="res://2d/Boss.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 535.011, 43.5632 )
@@ -1199,6 +1200,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label6" type="Label" parent="End"]
+margin_left = 15426.9
+margin_top = -11771.9
+margin_right = 15836.9
+margin_bottom = -11698.9
+custom_fonts/font = ExtResource( 10 )
+text = "Oh no! Keep jumping at it!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Wall39" parent="End" instance=ExtResource( 9 )]
 modulate = Color( 0.11, 0.11, 0.11, 1 )
 position = Vector2( 10659.2, -11516.8 )
@@ -1240,13 +1254,13 @@ position = Vector2( 16457.6, -12163.7 )
 position = Vector2( 16120.3, -12493.4 )
 
 [node name="Anchor17" parent="End" instance=ExtResource( 3 )]
-position = Vector2( 15178.4, -12236.8 )
-
-[node name="Anchor19" parent="End" instance=ExtResource( 3 )]
-position = Vector2( 14810.7, -12484.6 )
+position = Vector2( 15255.7, -11994.1 )
 
 [node name="Anchor18" parent="End" instance=ExtResource( 3 )]
 position = Vector2( 15517.3, -12491.8 )
+
+[node name="Anchor26" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 15877.9, -11904.7 )
 
 [node name="Wall40" parent="End" instance=ExtResource( 9 )]
 modulate = Color( 0.11, 0.11, 0.11, 1 )
@@ -1278,14 +1292,24 @@ dark = true
 
 [node name="Wall45" parent="End" instance=ExtResource( 9 )]
 modulate = Color( 0.11, 0.11, 0.11, 1 )
-position = Vector2( 15734.7, -12265.4 )
+position = Vector2( 15702.6, -12228.9 )
 rotation = 0.0
 scale = Vector2( 0.2, 0.4 )
 dark = true
 
 [node name="Wall46" parent="End" instance=ExtResource( 9 )]
 modulate = Color( 0.11, 0.11, 0.11, 1 )
-position = Vector2( 15077.9, -12265.4 )
+position = Vector2( 15155.2, -12022.7 )
+rotation = 0.0
+scale = Vector2( 0.2, 0.4 )
+dark = true
+
+[node name="Anchor27" parent="End" instance=ExtResource( 3 )]
+position = Vector2( 15039.6, -12345.8 )
+
+[node name="Wall47" parent="End" instance=ExtResource( 9 )]
+modulate = Color( 0.11, 0.11, 0.11, 1 )
+position = Vector2( 14939.1, -12374.4 )
 rotation = 0.0
 scale = Vector2( 0.2, 0.4 )
 dark = true
@@ -1317,8 +1341,31 @@ position = Vector2( -150.016, -305.553 )
 scale = Vector2( 0.08, 5 )
 shape = SubResource( 7 )
 
-[node name="Boss" type="StaticBody2D" parent="End"]
-position = Vector2( 15624.8, -11855.6 )
+[node name="Boss" type="KinematicBody2D" parent="End" groups=[
+"boss",
+]]
+position = Vector2( 15878.2, -11905.7 )
+script = ExtResource( 18 )
+
+[node name="projectile_emitter7" parent="End/Boss" instance=ExtResource( 13 )]
+position = Vector2( -66.7637, 2.48438 )
+rotation = -1.57079
+
+[node name="projectile_emitter8" parent="End/Boss" instance=ExtResource( 13 )]
+position = Vector2( 64.5645, -2.00586 )
+rotation = 1.57079
+
+[node name="projectile_emitter9" parent="End/Boss" instance=ExtResource( 13 )]
+position = Vector2( -2.17773, 66.0723 )
+rotation = 3.14159
+
+[node name="projectile_emitter10" parent="End/Boss" instance=ExtResource( 13 )]
+position = Vector2( -47.1504, 44.3906 )
+rotation = -2.35619
+
+[node name="projectile_emitter11" parent="End/Boss" instance=ExtResource( 13 )]
+position = Vector2( 45.3164, 47.9629 )
+rotation = -3.92699
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End/Boss"]
 shape = SubResource( 8 )
@@ -1327,11 +1374,13 @@ shape = SubResource( 8 )
 scale = Vector2( 0.254362, 0.254362 )
 texture = ExtResource( 17 )
 
+[node name="Tween" type="Tween" parent="End/Boss"]
+
 [node name="startPoint" type="Node2D" parent="."]
 position = Vector2( 176, 280 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10160, -10629 )
+position = Vector2( 14088.7, -11685.2 )
 gravity_scale = 18.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -1356,4 +1405,7 @@ position = Vector2( 1569.49, 129.453 )
 
 [node name="checkpoint" parent="." instance=ExtResource( 12 )]
 position = Vector2( 9920, -12200 )
+
+[node name="checkpoint7" parent="." instance=ExtResource( 12 )]
+position = Vector2( 14807.3, -11521.8 )
 [connection signal="body_entered" from="End/BossTrigger" to="End/BossTrigger" method="on_enter"]

@@ -20,5 +20,5 @@ func _process(delta):
 func _on_Timer_timeout():
 	var projectile = preload("res://2d/projectile.tscn").instance()
 	projectile.position = global_position
-	projectile.rotation_degrees = rotation_degrees
+	projectile.rotation_degrees = global_rotation_degrees
 	get_parent().get_parent().add_child(projectile)
